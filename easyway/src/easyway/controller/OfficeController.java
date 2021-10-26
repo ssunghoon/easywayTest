@@ -14,7 +14,6 @@ import easyway.action.ActionForward;
 import easyway.action.office.OfficeDeleteAction;
 import easyway.action.office.OfficeDetailAction;
 import easyway.action.office.OfficeInsertAction;
-import easyway.action.office.OfficeInsertFormAction;
 import easyway.action.office.OfficeListAction;
 
 @WebServlet("/office/*")
@@ -39,12 +38,7 @@ public class OfficeController extends HttpServlet {
     	//Action으로 선언하고 개별 클래스별로 형변환 할 수 있다
     	ActionForward forward = null;
     	 
-		/*
-		 * if(command.equals("officeInsertForm.do")) { ///MVC/board/insertForm.do 주소로
-		 * 들어왔을 때 action = new OfficeInsertFormAction(); //Action을 insertFormAction으로!
-		 * try { forward = action.execute(request, response); } catch (Exception e) {
-		 * e.printStackTrace(); } }else
-		 */if(command.equals("officeInsertAction.do")) {
+    	if(command.equals("officeInsertAction.do")) {
     		 action = new OfficeInsertAction();
     		 try {
 				forward = action.execute(request, response);

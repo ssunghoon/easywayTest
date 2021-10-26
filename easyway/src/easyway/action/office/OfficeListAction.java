@@ -27,7 +27,7 @@ public class OfficeListAction implements Action {
 		// .do에서 .do로 갈 때는 redirect
 		// .do에서 .jsp로 갈 때는 dispatcher
 		// redirect로 하면 list가 사라짐
-		forward.setPath("/offices/office_main.jsp");
+		forward.setPath("/WEB-INF/views/offices/office_main.jsp");
 		return forward;
 	}
 
