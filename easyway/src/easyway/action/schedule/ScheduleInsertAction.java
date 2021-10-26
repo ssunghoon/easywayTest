@@ -18,7 +18,7 @@ public class ScheduleInsertAction implements Action {//수정
 		service.ScheduleInsertService();
 		
 		forward.setRedirect(false);
-		forward.setPath("/Schedule.jsp");
+		forward.setPath("/WEB-INF/schedules/Schedule.jsp");
 		
 		return forward;
 	}
