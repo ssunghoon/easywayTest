@@ -59,7 +59,7 @@
 <link href="${path}/css/sidebars.css" rel="stylesheet">
 </head>
 <body>
-	<jsp:include page="./sidebar/sidebar.jsp" />
+	<jsp:include page="../public/sidebar.jsp" />
 	<div class="wrapper">
 		<div class="container-fluid">
 			<div class="row">
