@@ -6,6 +6,7 @@ public interface AttendanceMapper {
 	
 	int attendanceInsert(Attendance attendance);
 	int attendanceOutUpdate(Attendance attendance);
-	int AttendanceEndUpdate(Attendance attendance);
+	int attendanceEndUpdate(Attendance attendance);
+	Attendance attendanceToday(int employee_id);
 	
 }

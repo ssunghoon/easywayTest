@@ -74,12 +74,12 @@ public class AttendanceDao {
 		return re;
 	}
 	
-	public int AttendanceEndUpdate(Attendance attendance) {
+	public int attendanceEndUpdate(Attendance attendance) {
 		SqlSession sqlSession = getSqlSessionFactory().openSession();
 		int re =-1;
 		
 		try {
-			re = sqlSession.getMapper(AttendanceMapper.class).AttendanceEndUpdate(attendance);
+			re = sqlSession.getMapper(AttendanceMapper.class).attendanceEndUpdate(attendance);
 			if(re>0) {
 				sqlSession.commit();
 			}else {
@@ -95,6 +95,23 @@ public class AttendanceDao {
 		}
 		
 		return re;
+	}
+	
+	public Attendance attendanceToday(int employee_id){
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		Attendance attendance = null;
+		
+		try {
+			attendance = sqlSession.getMapper(AttendanceMapper.class).attendanceToday(employee_id);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(sqlSession != null) {
+				sqlSession. close();
+			}
+		}
+		
+		return attendance;
 	}
 	
 }
