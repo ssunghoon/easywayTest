@@ -114,17 +114,17 @@
 						<ul>
 							<li id="workStart">
 								<i class="far fa-clock"></i>
-								<span class="time">08 : 40</span>
+								<span class="time">${attendance.attendance_start}</span>
 								<span>출근</span>
 							</li>
 							<li id="workOut">
 								<i class="far fa-clock"></i>
-								<span class="time">15 : 10</span>
+								<span class="time">${attendance.attendance_out}</span>
 								<span>외근</span>
 							</li>
 							<li id="workEnd">
 								<i class="fas fa-clock"></i>
-								<span class="time">18 : 00</span>
+								<span class="time">${attendance.attendance_end}</span>
 								<span>퇴근</span>
 							</li>
 						</ul>

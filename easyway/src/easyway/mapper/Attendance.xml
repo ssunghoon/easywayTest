@@ -27,12 +27,21 @@
 	</update>
 	
 	
-	<update id="AttendanceEndUpdate" parameterType="Attendance">
+	<update id="attendanceEndUpdate" parameterType="Attendance">
 		UPDATE attendance SET attendance_end = TO_DATE(#{attendance_end},'yyyy/mm/dd hh24:mi:ss')
 		WHERE employee_id = 1
 		AND TO_CHAR(attendance_start, 'yyyy/mm/dd')
 			= TO_CHAR(SYSDATE, 'yyyy/mm/dd')
 	</update>
+	
+	
+	<select id="attendanceToday" parameterType="int" resultType="Attendance">
+		SELECT * FROM attendance
+		WHERE EMPLOYEE_ID = 1
+		AND TO_CHAR(attendance_start, 'yyyy/mm/dd')
+			= TO_CHAR(SYSDATE, 'yyyy/mm/dd')
+	</select>
+	
 	
 </mapper>
 

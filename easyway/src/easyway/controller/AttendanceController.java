@@ -14,6 +14,7 @@ import easyway.action.ActionForward;
 import easyway.action.attendance.AttendanceEndUpdateAction;
 import easyway.action.attendance.AttendanceInsertAction;
 import easyway.action.attendance.AttendanceOutUpdateAction;
+import easyway.action.attendance.AttendanceTodayAction;
 
 @WebServlet("/attendance/*")
 public class AttendanceController extends HttpServlet {
@@ -49,6 +50,13 @@ public class AttendanceController extends HttpServlet {
 			}
 		}else if (command.equals("attendanceEndUpdateAction.do")) {
 			action = new AttendanceEndUpdateAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}else if (command.equals("attendanceTodayAction.do")) {
+			action = new AttendanceTodayAction();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {

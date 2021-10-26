@@ -13,10 +13,10 @@ public class AttendanceEndUpdateAction implements Action {
 		ActionForward forward = new ActionForward();
 		AttendanceService service = AttendanceService.getInstance();
 
-		service.AttendanceEndUpdateService();
+		service.attendanceEndUpdateService();
 
-		forward.setRedirect(false);
-		forward.setPath("/attendance.jsp");
+		forward.setRedirect(true);
+		forward.setPath("attendanceTodayAction.do");
 
 		return forward;
 	}
