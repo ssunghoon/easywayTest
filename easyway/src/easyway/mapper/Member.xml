@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+
+<mapper namespace="easyway.mapper.OfficeMapper">
+	<cache />
+	
+	<!-- 이사& 수정하면서 : 아직 안쓰는 부분은 주석처리해가며 수정해야 에러 안 남 -->
+	<insert id="insertMember" parameterType="Member">
+		insert into office(
+			member_id, member_email, member_pw, member_name
+		)
+		values(
+			member_seq.nextval, #{member_email}, #{member_pw}, #{member_name}
+		)
+	</insert>
+	<select id="listOffice" resultType="Office">
+		select * from office order by office_id desc
+	</select>
+	
+	<select id="detailOffice" parameterType="int" resultType="Office">
+		select * from office where office_id = #{office_id}
+	</select>
+	
+<!-- 	<update id="updateBoard" parameterType="Board">
+		update board set
+			title = #{title},
+			contents = #{contents}
+		where seq = #{seq}
+	</update> -->
+	
+	<delete id="deleteOffice" parameterType="int">
+		delete from office
+		where office_id = #{office_id}
+	</delete>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

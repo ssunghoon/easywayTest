@@ -60,7 +60,8 @@
 				<div class="modal-body">
 					<form action="officeInsertAction.do" method="post" accept-charset="utf-8">
 						<div class="mb-3">
-							<label for="recipient-name" class="col-form-label">새로 생성할 오피스 이름:</label> <input type="text"
+							<label for="recipient-name" class="col-form-label">새로 생성할 오피스 이름:</label> 
+							<input type="text"
 								class="form-control" name="officeName">
 						</div>
 						<div class="modal-footer">
