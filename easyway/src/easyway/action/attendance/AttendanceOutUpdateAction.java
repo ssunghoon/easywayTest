@@ -15,8 +15,8 @@ public class AttendanceOutUpdateAction implements Action {
 
 		service.attendanceOutUpdateService();
 
-		forward.setRedirect(false);
-		forward.setPath("/attendance.jsp");
+		forward.setRedirect(true);
+		forward.setPath("attendanceTodayAction.do");
 
 		return forward;
 	}
