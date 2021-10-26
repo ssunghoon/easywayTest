@@ -40,7 +40,7 @@
 <link href="./css/sidebars.css" rel="stylesheet">
 </head>
 <body>
-	<jsp:include page="./sidebar/sidebar.jsp" />
+	<jsp:include page="../public/sidebar.jsp" />
 	<h1>gㅎㅇㅎㅇㅎㅇㅎㅇㅎㅇㅎㅇ</h1>
 
 </body>

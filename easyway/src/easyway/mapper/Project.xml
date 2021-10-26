@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<!-- 보드를 그냥쓰면 오류가 뜨기 때문에 콘피그에 typeAlias -->
+<mapper namespace="easyway.mapper.ProjectMapper">
+	<cache />
+	
+	<insert id="insertProject" parameterType="Project">
+		insert into project(
+			project_id, project_name, project_start, project_end, project_content
+		)
+		values(
+			project_seq.nextval, #{project_name}, #{project_start}, #{project_end}, #{project_content}
+		)
+	</insert>
+	
+	<select id="listProject" resultType="Project">
+		SELECT * FROM PROJECT
+	</select>
+	
+	
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
