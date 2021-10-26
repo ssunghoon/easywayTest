@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="path" value="${pageContext.request.contextPath}"/>
+	
 <!doctype html>
 <html lang="en">
 <head>
@@ -16,9 +19,10 @@
 
 
 <!-- Bootstrap core CSS -->
-<link href="./css/reset.css" rel="stylesheet">
+<link href="${path }/css/reset.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
+<!-- css -->
+<link href="${path}/css/sign.css" rel="stylesheet">
 <style>
 .bd-placeholder-img {
 	font-size: 1.125rem;
@@ -33,16 +37,35 @@
 		font-size: 3.5rem;
 	}
 }
+#basicSign {
+	padding-top:50px;
+}
 </style>
 
 
 <!-- Custom styles for this template -->
-<link href="./css/sidebars.css" rel="stylesheet">
+<link href="${path }/css/sidebars.css" rel="stylesheet">
 </head>
 <body>
-	<jsp:include page="./sidebar/sidebar.jsp" />
-	<h1>gㅎㅇㅎㅇㅎㅇㅎㅇㅎㅇㅎㅇ</h1>
+<jsp:include page="../public/sidebar.jsp" />
 
+	<div id="wrap">
+		<div id="basicSign">
+			<h4>기본 기안서</h4>
+			<form action="inserBasicAction.do" method="post" enctype="multipart/form-data">
+				범위 : <input type="text" name="sbRange"><br>
+				시작일 : <input type="date" name="sbStart"><br>
+				종료일 : <input type="date" name="sbEnd"><br>
+				중요도 : <input type="text" name="sbImportance"><br>
+				<input type="file" name=""><br>
+				제목 : <input type="text" name="sbTitle"><br>
+				 <br>
+				<textarea rows="6" cols="70" name="sbContents"></textarea>
+				<br>
+				<input type="submit" value="등록">
+			</form>
+		</div>
+	</div>
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

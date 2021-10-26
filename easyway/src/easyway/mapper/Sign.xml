@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="easyway.mapper.SignMapper">
+	<cache/>
+	
+	<!-- 기본기안서 작성 -->
+	<insert id="insertSignBasic" parameterType="BasicSign">
+		insert into si_basic(
+			sb_id, sf_id, sb_range, sb_start, sb_end,sb_importance,sb_title,sb_content
+		)
+		values (
+			si_basic_seq.nextval,1,#{sb_range},#{sb_start},#{sb_end},#{sb_importance},#{sb_title},#{sb_content}
+		)
+		
+	</insert>
+	
+	<!-- 기안함 목록 -->
+	<select id="listDraft" resultType="Sign">
+		select sign_id, sign_date
+		form sign
+		order by sign_id desc
+	</select>
+</mapper>

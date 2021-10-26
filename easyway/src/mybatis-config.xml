@@ -6,6 +6,9 @@
 <configuration>
 	<typeAliases>
 		<typeAlias type="easyway.model.attendance.Attendance" alias="Attendance"/>
+		<typeAlias type="easyway.model.sign.Sign" alias="Sign"/>
+		<typeAlias type="easyway.model.sign.BasicSign" alias="BasicSign"/>
+		<typeAlias type="easyway.model.sign.Search" alias="Search"/>
 	</typeAliases>
 	
 	<environments default="development">
@@ -19,6 +22,7 @@
 	
 	<mappers>
 		<mapper resource="easyway/mapper/Attendance.xml"/>
+		<mapper resource="easyway/mapper/Sign.xml"/> 
 	</mappers>
 	
 </configuration>

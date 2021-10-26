@@ -16,7 +16,7 @@
 			<li><a href="#" class="nav-link link-dark"> <!-- 이미지자리 -->
 					근태관리
 			</a></li>
-			<li><a href="#" class="nav-link link-dark"> <!-- 이미지자리 -->
+			<li><a href="draftListAction.do" class="nav-link link-dark"> <!-- 이미지자리 -->
 					전자결재
 			</a></li>
 			<li><a href="#" class="nav-link link-dark"> <!-- 이미지자리 -->
