@@ -4,7 +4,8 @@
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 
 <configuration>
-	<typeAliases>
+ 	<typeAliases>
+		<typeAlias type="easyway.model.office.Office" alias="Office"/>
 		<typeAlias type="easyway.model.attendance.Attendance" alias="Attendance"/>
 	</typeAliases>
 	
@@ -19,6 +20,7 @@
 	
 	<mappers>
 		<mapper resource="easyway/mapper/Attendance.xml"/>
+		<mapper resource="easyway/mapper/Office.xml"/>
 	</mappers>
 	
 </configuration>
