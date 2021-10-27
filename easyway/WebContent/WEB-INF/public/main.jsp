@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="path" value="${pageContext.request.contextPath}" />
+	
 <!doctype html>
 <html lang="en">
 <head>
@@ -16,7 +19,7 @@
 
 
 <!-- Bootstrap core CSS -->
-<link href="./css/reset.css" rel="stylesheet">
+<link href="${path }/css/reset.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 <style>
@@ -40,7 +43,7 @@
 <link href="./css/sidebars.css" rel="stylesheet">
 </head>
 <body>
-	<jsp:include page="./sidebar/sidebar.jsp" />
+<jsp:include page="${path }/public/sidebar.jsp" />
 	<h1>gㅎㅇㅎㅇㅎㅇㅎㅇㅎㅇㅎㅇ</h1>
 
 </body>

@@ -85,5 +85,9 @@ main {
   overflow-y: auto;
 }
 
+.wrap {
+	margin-left: 400px;
+}
+
 .fw-semibold { font-weight: 600; }
 .lh-tight { line-height: 1.25; }
