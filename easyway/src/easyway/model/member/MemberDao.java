@@ -53,6 +53,24 @@ public class MemberDao {
 
 		return re;
 	}
+	
+	public Member loginMember(String email, String password) {
+		System.out.println("로그인 dao 실행" + email +" " + password);
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		Member member = null;
+
+		try {
+			member = sqlSession.getMapper(MemberMapper.class).loginMember(email, password);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if (sqlSession != null) {
+				sqlSession.close();
+			}
+		}
+
+		return member;
+	}
 
 //	public List<Member> listOffice() {
 //		SqlSession sqlSession = getSqlSessionFactory().openSession();

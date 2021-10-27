@@ -7,7 +7,7 @@ import easyway.model.office.Office;
 public interface OfficeMapper {
 	
 	int insertOffice(Office office);
-	List<Office> listOffice();
+	List<Office> listOffice(int member_id);
 	Office detailOffice(int seq);
 	int deleteOffice(int seq);	
 

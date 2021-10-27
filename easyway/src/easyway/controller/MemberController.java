@@ -13,6 +13,8 @@ import easyway.action.Action;
 import easyway.action.ActionForward;
 import easyway.action.member.MemberInsertAction;
 import easyway.action.member.MemberInsertFormAction;
+import easyway.action.member.MemberLoginAction;
+import easyway.action.member.MemberLoginFormAction;
 import easyway.action.office.OfficeDeleteAction;
 import easyway.action.office.OfficeDetailAction;
 import easyway.action.office.OfficeInsertAction;
@@ -54,21 +56,29 @@ public class MemberController extends HttpServlet {
  			} catch (Exception e) {
  				e.printStackTrace();
  			}
-    	 }else if(command.equals("officeListAction.do")) {
-    		 action = new OfficeListAction();
+    	 }else if(command.equals("memberLoginForm.do")) {
+    		 action = new MemberLoginFormAction();
     		 try {
  				forward = action.execute(request, response);
  			} catch (Exception e) {
  				e.printStackTrace();
  			}
-    	 }else if(command.equals("officeDetailAction.do")) {
+    	 }else if(command.equals("memberLoginAction.do")) {
+    		 action = new MemberLoginAction();
+    		 try {
+ 				forward = action.execute(request, response);
+ 			} catch (Exception e) {
+ 				e.printStackTrace();
+ 			}
+    	 }
+    	 else if(command.equals("memberDetailAction.do")) {
     		 action = new OfficeDetailAction();
     		 try {
     			 forward = action.execute(request, response);
     		 } catch (Exception e) {
     			 e.printStackTrace();
     		 }
-    	 }else if(command.equals("officeDeleteAction.do")) {
+    	 }else if(command.equals("memberDeleteAction.do")) {
     		 action = new OfficeDeleteAction();
     		 try {
     			 forward = action.execute(request, response);

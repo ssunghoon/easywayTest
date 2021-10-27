@@ -42,7 +42,7 @@
       <div class="input-form col-md-12 mx-auto">
         <h4 class="mb-3">회원가입</h4>
         
-        <form class="validation-form" novalidate>
+        <form class="validation-form" novalidate action="memberInsertAction.do" method="post" accept-charset="utf-8">
           <div class="mb-3">
             <label for="name">이름</label>
             <input type="text" class="form-control" id="name" name="member_name" placeholder="" value="" required>

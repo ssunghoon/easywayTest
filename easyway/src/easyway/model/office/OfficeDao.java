@@ -55,12 +55,12 @@ public class OfficeDao {
 		return re;
 	}
 
-	public List<Office> listOffice() {
+	public List<Office> listOffice(int member_id) {
 		SqlSession sqlSession = getSqlSessionFactory().openSession();
 		List<Office> list = null;
 
 		try {
-			list = sqlSession.getMapper(OfficeMapper.class).listOffice();
+			list = sqlSession.getMapper(OfficeMapper.class).listOffice(member_id);
 
 		} catch (Exception e) {
 			e.printStackTrace();

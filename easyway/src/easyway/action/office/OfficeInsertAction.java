@@ -15,6 +15,7 @@ public class OfficeInsertAction implements Action {
 		ActionForward forward = new ActionForward();
 		OfficeService service = OfficeService.getInstance();
 		
+		System.out.println("오피스 인서트 액션 실행");
 		//이하 비즈니스 호출 작업
 		int result = service.insertOfficeService(request);
 		result = -1;
@@ -24,7 +25,7 @@ public class OfficeInsertAction implements Action {
 		//list.jsp로 바로 이동해서 list.jsp가 모든 것을 처리하게끔 하지 않을 예정
 		
 		forward.setRedirect(true);
-		forward.setPath("officeListAction.do");
+		forward.setPath("/easyway/office/officeListAction.do");
 		//listAction.do는 진짜 파일 경로가 아니므로 /listAction.do 이렇게 안 씀ㅜ
 		
 		return forward;

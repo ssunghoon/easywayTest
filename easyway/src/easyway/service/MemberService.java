@@ -34,6 +34,17 @@ public class MemberService {
 		return dao.insertMember(member);
 
 	}
+	
+	public Member loginMemberService(HttpServletRequest request) throws Exception {
+		request.setCharacterEncoding("utf-8");
+		
+		System.out.println("로그인 실행");
+		String email = request.getParameter("member_email");
+		String password = request.getParameter("member_pw");
+
+		return dao.loginMember(email, password);
+
+	}
 
 //	public List<Member> listOfficeService(HttpServletRequest request) throws Exception {
 //
