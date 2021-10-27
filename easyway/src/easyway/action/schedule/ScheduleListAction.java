@@ -7,21 +7,18 @@ import easyway.action.Action;
 import easyway.action.ActionForward;
 import easyway.service.ScheduleService;
 
-public class ScheduleInsertAction implements Action {
+public class ScheduleListAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		ActionForward forward = new ActionForward();
+		ActionForward forward = new ActionForward(); 
 		ScheduleService service = ScheduleService.getInstance();
 		
-		//서비스호출
-		service.ScheduleInsertService(request);
-
-		forward.setRedirect(true);
-//		forward.setPath("scheduleInsertAction.do");
-		forward.setPath("list.do");//수정
+//		
+//		request.setAttribute("listModel", listModel);
 		
-		
+		forward.setRedirect(false);
+		forward.setPath("/list.jsp");
 		
 		return forward;
 	}

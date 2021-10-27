@@ -30,12 +30,12 @@ public class ScheduleDao {
 	}
 	
 	public int scheduleInsert(Schedule schedule) {
-		System.out.println("scheduleInsert실행");//확인코드
 		SqlSession sqlSession = getSqlSessionFactory().openSession();
 		int re =-1;
 		
 		try {
-			re = sqlSession.getMapper(ScheduleMapper.class).scheduleInsert(schedule);
+			re = sqlSession.getMapper(ScheduleMapper.class).scheduleInsert(schedule);//xml과이름동일!!
+			System.out.println(re);
 			if(re>0) {
 				sqlSession.commit();
 			}else {

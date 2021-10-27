@@ -3,21 +3,21 @@ package easyway.model.schedule;
 import java.io.Serializable;
 
 public class Schedule implements Serializable {
-	private int schedule_id;
+	private int schedule_id; //DB 컬럼명 이랑 일치
 	private int employee_id;
 	private String schedule_title;
 	private String schedule_start; //DATE
 	private String schedule_end; //DATE
 	private String schedule_content;
-	private String schedule_importance; //중요도 상중하,or 123
-	private char schedule_private;// 공사구분 0은 회사 1은 부서
+	private String schedule_importance; //중요도 상중하
+	private String schedule_private;// 공사구분 0은 회사 1은 부서
 	
 	public Schedule() {
 		super();
 	}
 	
 	public Schedule(int schedule_id, int employee_id, String schedule_title, String schedule_start, String schedule_end,
-			String schedule_content, String schedule_importance, char schedule_private) {
+			String schedule_content, String schedule_importance, String schedule_private) {
 		super();
 		this.schedule_id = schedule_id;
 		this.employee_id = employee_id;
@@ -71,10 +71,10 @@ public class Schedule implements Serializable {
 	public void setSchedule_importance(String schedule_importance) {
 		this.schedule_importance = schedule_importance;
 	}
-	public char getSchedule_private() {
+	public String getSchedule_private() {
 		return schedule_private;
 	}
-	public void setSchedule_private(char schedule_private) {
+	public void setSchedule_private(String schedule_private) {
 		this.schedule_private = schedule_private;
 	}
 	

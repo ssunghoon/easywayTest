@@ -22,7 +22,7 @@
 			<li><a href="#" class="nav-link link-dark"> <!-- 이미지자리 -->
 					프로젝트
 			</a></li>
-			<li><a href="#" class="nav-link link-dark"> <!-- 이미지자리 -->
+			<li><a href="../schedules/calendar.jsp" class="nav-link link-dark"> <!-- 이미지자리 -->
 					캘린더
 			</a></li>
 		</ul>
