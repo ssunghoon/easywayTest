@@ -1,8 +1,8 @@
 package easyway.model.sign;
 
-import java.sql.Date;
+import java.io.Serializable;
 
-public class BasicSign {
+public class BasicSign implements Serializable{
 	private int sb_id;
 	private int sf_id;
 	private String sb_range;

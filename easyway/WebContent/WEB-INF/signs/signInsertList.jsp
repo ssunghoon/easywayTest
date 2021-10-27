@@ -37,9 +37,6 @@
 		font-size: 3.5rem;
 	}
 }
-#basicSign {
-	padding-top:50px;
-}
 </style>
 
 
@@ -50,20 +47,15 @@
 <jsp:include page="../public/sidebar.jsp" />
 
 	<div id="wrap">
-		<div id="basicSign">
-			<h4>기본 기안서</h4>
-			<form action="inserBasicAction.do" method="post" enctype="multipart/form-data">
-				범위 : <input type="text" name="sbRange"><br>
-				시작일 : <input type="date" name="sbStart"><br>
-				종료일 : <input type="date" name="sbEnd"><br>
-				중요도 : <input type="text" name="sbImportance"><br>
-				<input type="file" name=""><br>
-				제목 : <input type="text" name="sbTitle"><br>
-				 <br>
-				<textarea rows="6" cols="70" name="sbContents"></textarea>
-				<br>
-				<input type="submit" value="등록">
-			</form>
+		<div class="btn-group btn-group-lg col-lg-11" style="margin:50px">
+		  <button type="button" class="btn btn-primary">기안작성</button>
+		  <button type="button" class="btn btn-primary">기안함</button>
+		  <button type="button" class="btn btn-primary">결재함</button>
+		</div>
+		<div id="middleBox">
+			<button class="btn btnGray" onclick="location.href='insertBasicForm.do'" >기본기안서</button>
+			<button class="btn btnGray" onclick="location.href='insertSpendForm.do'" >지출결의서</button>
+			<button class="btn btnGray" onclick="location.href='insertVacationForm.do'" >휴가신청서</button>
 		</div>
 	</div>
 </body>

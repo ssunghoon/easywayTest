@@ -53,7 +53,50 @@ public class SignDao {
 		}
 		 return re;
 	}
+	// 지출결의서 등록
+	public int insertSignSpend(SpendSign spend) {
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		int re = -1;
+		
+		 try {
+			 re = sqlSession.getMapper(SignMapper.class).insertSignSpend(spend);
+			 if(re>0) {
+				 sqlSession.commit();
+			 }else {
+				 sqlSession.rollback();
+			 }
+		 }catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(sqlSession != null) {
+				sqlSession.close();
+			}
+		}
+		 return re;
+	}
 	
+	// 휴가 신청서 등록
+	public int insertSignVacation(VacationSign vacation) {
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		int re = -1;
+		
+		 try {
+			 re = sqlSession.getMapper(SignMapper.class).insertSignVacation(vacation);
+			 if(re>0) {
+				 sqlSession.commit();
+			 }else {
+				 sqlSession.rollback();
+			 }
+		 }catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(sqlSession != null) {
+				sqlSession.close();
+			}
+		}
+		 return re;
+	}
+
 	public List<Sign> draftListSign(int startRow, Search search){
 		SqlSession sqlSession = getSqlSessionFactory().openSession();
 		List<Sign> list = null;

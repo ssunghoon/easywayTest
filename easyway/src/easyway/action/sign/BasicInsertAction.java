@@ -7,6 +7,7 @@ import easyway.action.Action;
 import easyway.action.ActionForward;
 import easyway.service.SignService;
 
+// 기본 기안서
 public class BasicInsertAction implements Action {
 
 	@Override
@@ -18,7 +19,7 @@ public class BasicInsertAction implements Action {
 		
 		// 페이지이동(insertSign.do) => 새로운 요청
 		forward.setRedirect(true);
-		forward.setPath("draftListAction.do");
+		forward.setPath("signInsertListAction.do");
 		
 		return forward;
 	}

@@ -37,6 +37,7 @@
 		font-size: 3.5rem;
 	}
 }
+
 </style>
 
 
@@ -47,15 +48,21 @@
 <jsp:include page="../public/sidebar.jsp" />
 
 	<div id="wrap">
-		<div class="btn-group btn-group-lg col-lg-11" style="margin:50px">
-		  <button type="button" class="btn btn-primary">기안작성</button>
-		  <button type="button" class="btn btn-primary">기안함</button>
-		  <button type="button" class="btn btn-primary">결재함</button>
-		</div>
-		<div id="middleBox">
-			<button class="btn btnGray" onclick="location.href='insertBasicForm.do'" >기본기안서</button>
-			<button class="btn btnGray" onclick="location.href=''" >지출결의서</button>
-			<button class="btn btnGray" onclick="location.href=''" >휴가신청서</button>
+		<div class="sign">
+			<h4>기본 기안서</h4>
+			<form action="insertBasicAction.do" method="post" accept-charset="utf-8">
+				제목 : <input type="text" name="sb_title"><br>
+				범위 : <input type="text" name="sb_range"><br>
+				시작일 : <input type="date" name="sb_start"><br>
+				종료일 : <input type="date" name="sb_end"><br>
+				중요도 : <input type="radio" name="sb_importance" id="first" value="상">&nbsp;<label for="first">상</label>
+				 <input type="radio" name="sb_importance" id="second" value="중">&nbsp;<label for="second">중</label>
+				 <input type="radio" name="sb_importance" id="third" value="하">&nbsp;<label for="third">하</label><br>
+				 <br>
+				<textarea rows="6" cols="70" name="sb_content"></textarea>
+				<br>
+				<input type="submit" value="등록">
+			</form>
 		</div>
 	</div>
 </body>
