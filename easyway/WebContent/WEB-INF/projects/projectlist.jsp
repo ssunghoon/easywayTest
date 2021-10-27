@@ -50,8 +50,47 @@
 	<jsp:include page="../public/sidebar.jsp" />
 	<!-- 	<div style="height: 300px; width: 200px; background: yellow; margin-left: 500px; display:none;"> -->
 	<!-- 	</div> -->
-	<div class="wrapper">
-		<a href="projectInsertForm.do">프로젝트 생성</a>
+<!-- 	<div class="wrapper"> -->
+<!-- 		<a href="projectInsertForm.do">프로젝트 생성</a> -->
+		<button type="button" class="btn btn-primary" data-bs-toggle="modal"
+			data-bs-target="#staticBackdrop">프로젝트 생성</button>
+
+		<!-- Modal -->
+		<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static"
+			data-bs-keyboard="false" tabindex="-1"
+			aria-labelledby="staticBackdropLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<form action="projectInsertAction.do" method="post">
+						<div class="modal-header">
+							<h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+							<button type="button" class="btn-close" data-bs-dismiss="modal"
+								aria-label="Close"></button>
+						</div>
+						<div class="modal-body">
+							<div>
+								프로젝트 이름 : <input type="text" name="project_name"><br>
+								시작일 : <input type="date" name="project_start"><br>
+								종료일 : <input type="date" name="project_end"><br>
+								프로젝트 설명 <br>
+								<textarea rows="6" cols="70" name="project_content"></textarea>
+								<br>
+								<!-- 								<input type="submit" class="btn btn-primary mb-3" -->
+								<!-- 									value="등록"> -->
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary"
+								data-bs-dismiss="modal">취소</button>
+							<input type="submit" class="btn btn-primary" value="등록">
+							<!-- 							<button type="button" class="btn btn-primary">생성</button> -->
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+
+
 		<table border="1">
 			<tr>
 				<td>프로젝트 번호&nbsp;&nbsp;</td>
@@ -63,7 +102,7 @@
 			<c:forEach var="project" items="${list }">
 				<tr>
 					<td>${project.project_id }</td>
-					<td><a href="detailAction.do?seq=${project.project_id }">${project.project_name}</a></td>
+					<td><a href="pb_menuListAction.do?project_id=${project.project_id }">${project.project_name}</a></td>
 					<td><fmt:parseDate var="dt" value="${project.project_start}"
 							pattern="yyyy-MM-dd HH:mm:ss" /> <fmt:formatDate value="${dt }"
 							pattern="yyyy/MM/dd" /></td>

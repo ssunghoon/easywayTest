@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
+import easyway.model.Pb_Menu;
 import easyway.model.Project;
 import easyway.model.ProjectDao;
 
@@ -30,6 +31,10 @@ public class ProjectService {
 	
 	public List<Project> listProjectService(HttpServletRequest request)throws Exception {
 		return dao.listProject();
+	}
+	
+	public List<Pb_Menu> listPb_MenuService(int project_id)throws Exception {
+		return dao.listPb_Menu(project_id);
 	}
 	
 }

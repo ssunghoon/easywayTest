@@ -20,7 +20,9 @@
 		SELECT * FROM PROJECT
 	</select>
 	
-	
+	<select id="listPb_Menu" resultType="Pb_Menu" parameterType="int">
+		SELECT * FROM PB_MENU WHERE PROJECT_ID = #{project_id}
+	</select>
 	
 </mapper>
 

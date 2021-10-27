@@ -9,6 +9,8 @@ public class Pr_Board implements Serializable {
 	private String pb_file_path;
 	private String pb_date;
 	
+	public Pr_Board() {}
+	
 	public Pr_Board(int pb_id, String pb_title, String pb_content, String pb_file_path, String pb_date) {
 		super();
 		this.pb_id = pb_id;

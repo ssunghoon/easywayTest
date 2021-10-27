@@ -71,5 +71,21 @@ public class ProjectDao {
 		return list;
 	}
 	
+	public List<Pb_Menu> listPb_Menu(int project_id){
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		List<Pb_Menu> list = null;
+		
+		try {
+			list = sqlSession.getMapper(ProjectMapper.class).listPb_Menu(project_id);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(sqlSession != null) {
+				sqlSession.close();
+			}
+		}
+		return list;
+	}
+	
 	
 }

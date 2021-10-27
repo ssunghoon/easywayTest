@@ -6,6 +6,7 @@
 <configuration>
 	<typeAliases>
 		<typeAlias type="easyway.model.Project" alias="Project"/>
+		<typeAlias type="easyway.model.Pb_Menu" alias="Pb_Menu"/>
 	</typeAliases>
 	
 	<environments default="development">

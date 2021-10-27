@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 public class Pb_Menu implements Serializable {
 	private int pbm_id;
+	
+	public Pb_Menu() {}
 
 	public Pb_Menu(int pbm_id) {
 		super();

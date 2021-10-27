@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <c:set var="path" value="${pageContext.request.contextPath}" />
 <!doctype html>
 <html lang="en">
@@ -42,7 +43,6 @@
 }
 </style>
 
-
 <!-- Custom styles for this template -->
 <link href="${path}/css/sidebars.css" rel="stylesheet">
 </head>
@@ -51,49 +51,25 @@
 	<!-- 	<div style="height: 300px; width: 200px; background: yellow; margin-left: 500px; display:none;"> -->
 	<!-- 	</div> -->
 	<div class="wrapper">
-		<!-- Button trigger modal -->
-		<button type="button" class="btn btn-primary" data-bs-toggle="modal"
-			data-bs-target="#staticBackdrop">프로젝트 생성</button>
-
-		<!-- Modal -->
-		<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static"
-			data-bs-keyboard="false" tabindex="-1"
-			aria-labelledby="staticBackdropLabel" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<form action="projectInsertAction.do" method="post">
-						<div class="modal-header">
-							<h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
-							<button type="button" class="btn-close" data-bs-dismiss="modal"
-								aria-label="Close"></button>
-						</div>
-						<div class="modal-body">
-							<div>
-								프로젝트 이름 : <input type="text" name="project_name"><br>
-								시작일 : <input type="date" name="project_start"><br>
-								종료일 : <input type="date" name="project_end"><br>
-								프로젝트 설명 <br>
-								<textarea rows="6" cols="70" name="project_content"></textarea>
-								<br>
-								<!-- 								<input type="submit" class="btn btn-primary mb-3" -->
-								<!-- 									value="등록"> -->
-							</div>
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-secondary"
-								data-bs-dismiss="modal">취소</button>
-							<input type="submit" class="btn btn-primary" value="등록">
-							<!-- 							<button type="button" class="btn btn-primary">생성</button> -->
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-
-
+		<a href="pb_MenuInsertForm.do">게시판 생성</a>
+		<br> <br>
 	</div>
+	
+	<table>
+		<tr>
+			<td>게시판 목록</td>
+		</tr>
+		<c:forEach var="pbm" items="${pbm}">
+			<tr>
+				<td>게시판 ${pbm.pbm_id }</td>
+			</tr>		
+		</c:forEach>
+	</table>
+	<br>
+	
+	<br><br>
+	
 </body>
-
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
 	integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"

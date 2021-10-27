@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import easyway.action.Action;
 import easyway.action.ActionForward;
+import easyway.action.project.Pb_MenuListAction;
 import easyway.action.project.ProjectInsertAction;
 import easyway.action.project.ProjectInsertFormAction;
 import easyway.action.project.ProjectListAction;
@@ -51,6 +52,13 @@ public class ProjectController extends HttpServlet {
 			}
     	}else if(command.equals("projectListAction.do")) {
     		action = new ProjectListAction();
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    	}else if(command.equals("pb_menuListAction.do")) {
+    		action = new Pb_MenuListAction();
     		try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
