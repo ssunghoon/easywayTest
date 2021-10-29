@@ -36,9 +36,9 @@ public class OfficeDao {
 	public int insertOffice(Office office) {
 		SqlSession sqlSession = getSqlSessionFactory().openSession();
 		int re = -1;
-
 		try {
-			re = sqlSession.getMapper(OfficeMapper.class).insertOffice(office);
+			sqlSession.getMapper(OfficeMapper.class).insertOffice(office);
+			re = office.getOffice_id();	 //pk값 반환		
 			if (re > 0) {
 				sqlSession.commit();
 			} else {
@@ -54,6 +54,29 @@ public class OfficeDao {
 
 		return re;
 	}
+	
+	public int insertOfficeCreate(OfficeCreate oc) {
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		int re = -1;
+
+		try {
+			re = sqlSession.getMapper(OfficeMapper.class).insertOfficeCreate(oc);
+			if (re > 0) {
+				sqlSession.commit();
+			} else {
+				sqlSession.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if (sqlSession != null) {
+				sqlSession.close();
+			}
+		}
+
+		return re;
+	}
+	
 
 	public List<Office> listOffice(int member_id) {
 		SqlSession sqlSession = getSqlSessionFactory().openSession();

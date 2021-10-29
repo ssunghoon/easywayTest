@@ -8,6 +8,7 @@
 		<typeAlias type="easyway.model.office.Office" alias="Office"/>
 		<typeAlias type="easyway.model.member.Member" alias="Member"/>
 		<typeAlias type="easyway.model.attendance.Attendance" alias="Attendance"/>
+		<typeAlias type="easyway.model.office.OfficeCreate" alias="OfficeCreate"/>
 	</typeAliases>
 	
 	<environments default="development">

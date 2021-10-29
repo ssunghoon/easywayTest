@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 
 import easyway.model.member.Member;
 import easyway.model.office.Office;
+import easyway.model.office.OfficeCreate;
 import easyway.model.office.OfficeDao;
 
 
@@ -40,8 +41,20 @@ public class OfficeService {
 		Office office = new Office();
 		office.setOffice_code(officeCode.toString());
 		office.setOffice_name(request.getParameter("officeName"));
-
-		return dao.insertOffice(office);
+		int office_id = dao.insertOffice(office);
+		
+		HttpSession sesstion = request.getSession();
+		Member member = (Member)sesstion.getAttribute("memberInfo");
+		
+		int member_id = member.getMember_id();
+		System.out.println("맴버" + member_id);
+		System.out.println("오피스" + office_id);
+		
+		OfficeCreate oc = new OfficeCreate();
+		oc.setOffice_id(office_id);
+		oc.setMember_id(member_id);
+		
+		return dao.insertOfficeCreate(oc);
 
 	}
 
