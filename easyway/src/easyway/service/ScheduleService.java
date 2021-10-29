@@ -1,6 +1,9 @@
 package easyway.service;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import easyway.model.schedule.Schedule;
 import easyway.model.schedule.ScheduleDao;
@@ -31,10 +34,19 @@ public class ScheduleService {
 		System.out.println(request.getParameter("schedule_end"));
 		System.out.println(request.getParameter("schedule_content"));
 		System.out.println(request.getParameter("schedule_importance"));
-		System.out.println(request.getParameter("schedule_private"));
-//		
+		System.out.println(request.getParameter("schedule_private"));	
 		
 		return dao.scheduleInsert(schedule);
 	}
+	
+	public List<Schedule> ScheduleListservice(HttpServletRequest request, HttpServletResponse response) throws Exception{
+		request.setCharacterEncoding("utf-8");
+		System.out.println("ScheduleListservice실행");//확인코드
+		
+		List<Schedule> list = dao.scheduleList();
+		
+		return list;
+	}
+	
 }
 

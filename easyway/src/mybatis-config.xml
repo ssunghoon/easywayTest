@@ -6,8 +6,7 @@
 <configuration>
 	<typeAliases>
 		<typeAlias type="easyway.model.attendance.Attendance" alias="Attendance"/>
-		<typeAlias type="easyway.model.schedule.Schedule" alias="Schedule"/><!--schedule-->
-		<typeAlias type="easyway.model.Search" alias="Search"/>
+		<typeAlias type="easyway.model.schedule.Schedule" alias="Schedule"/>
 	</typeAliases>
 	
 	<environments default="development">

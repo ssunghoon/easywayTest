@@ -14,6 +14,7 @@ import easyway.action.ActionForward;
 
 import easyway.action.schedule.ScheduleInsertAction;
 import easyway.action.schedule.ScheduleInsertFormAction;
+import easyway.action.schedule.ScheduleListAction;
 
 @WebServlet("/schedule/*")
 public class ScheduleController extends HttpServlet {
@@ -47,8 +48,9 @@ public class ScheduleController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		}else if (command.equals("scheduleListAction.do")) {
-//			action = new ScheduleListAction();// 요청에대한 액션
+		}
+		else if (command.equals("scheduleListAction.do")) {
+			action = new ScheduleListAction();// 요청에대한 액션
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {

@@ -13,7 +13,7 @@ public class ScheduleInsertFormAction implements Action {
 		ActionForward forward = new ActionForward();
 		
 		forward.setRedirect(false);
-		forward.setPath("/WEB-INF/schedules/schedule_form.jsp");
+		forward.setPath("/WEB-INF/schedules/scheduleForm.jsp");
 		
 		return forward;
 	}
