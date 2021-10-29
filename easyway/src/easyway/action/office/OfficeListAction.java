@@ -17,9 +17,7 @@ public class OfficeListAction implements Action {
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ActionForward forward = new ActionForward();
 		OfficeService service = OfficeService.getInstance();
-		
 		List<Office> listOffice = service.listOfficeService(request);
-		
 		request.setAttribute("listOffice", listOffice);
 		// 받아온 데이터 저장
 		

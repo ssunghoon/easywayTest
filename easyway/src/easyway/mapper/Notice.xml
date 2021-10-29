@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+
+<mapper namespace="easyway.mapper.NoticeMapper">
+	<cache />
+
+	<insert parameterType="Notice" id="noticeInsert">
+	insert into
+		OF_BOARD(ob_id, obm_id,
+		employee_id, ob_title, ob_type, ob_content, ob_file_path, ob_date, ob_view
+		)values(ob_seq.nextval, #{obm_id}, #{employee_id}, #{ob_title},	#{ob_type}, #{ob_content}, #{ob_file_path}, sysdate, 0)
+    
+	</insert>
+
+<select id="noticeList"  resultType="Notice">
+		select * from OF_BOARD
+	</select>
+
+</mapper>

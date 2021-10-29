@@ -5,8 +5,8 @@ import java.util.Random;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import javax.swing.ListModel;
 
+import easyway.model.member.Member;
 import easyway.model.office.Office;
 import easyway.model.office.OfficeDao;
 
@@ -49,7 +49,12 @@ public class OfficeService {
 
 		request.setCharacterEncoding("utf-8");
 
-		List<Office> list = dao.listOffice();
+		HttpSession sesstion = request.getSession();
+		Member member = (Member)sesstion.getAttribute("memberInfo");
+		
+		int member_id = member.getMember_id();
+
+		List<Office> list = dao.listOffice(member_id);
 
 		return list;
 	}
