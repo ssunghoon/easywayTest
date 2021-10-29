@@ -8,6 +8,8 @@
 		<typeAlias type="easyway.model.office.Office" alias="Office"/>
 		<typeAlias type="easyway.model.member.Member" alias="Member"/>
 		<typeAlias type="easyway.model.attendance.Attendance" alias="Attendance"/>
+		<typeAlias type="easyway.model.Project" alias="Project"/>
+		<typeAlias type="easyway.model.Pb_Menu" alias="Pb_Menu"/>
 	</typeAliases>
 	
 	<environments default="development">
@@ -23,6 +25,7 @@
 		<mapper resource="easyway/mapper/Attendance.xml"/>
 		<mapper resource="easyway/mapper/Office.xml"/>
 		<mapper resource="easyway/mapper/Member.xml"/>
+		<mapper resource="easyway/mapper/Project.xml"/>
 	</mappers>
 	
 </configuration>
