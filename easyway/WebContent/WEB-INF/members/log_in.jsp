@@ -41,7 +41,7 @@
 
 	<main class="form-signin">
 	
-	<form>
+	<form action="memberLoginAction.do" method="post" accept-charset="utf-8">
 		<h1 class="h3 mb-3 fw-normal">Easyway Log-in</h1>
 
 		<div class="form-floating">
@@ -59,7 +59,7 @@
 
 	<div id="register">
 		<span>아직 회원이 아니신가요? </span>
-		<a href="">회원가입</a>
+		<a href="/easyway/member/memberInsertForm.do">회원가입</a>
 	</div>
 	
 	</main>

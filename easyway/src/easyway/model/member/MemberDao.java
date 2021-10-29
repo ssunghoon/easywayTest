@@ -1,22 +1,21 @@
-package easyway.model.office;
-//mybatis용 dao
+package easyway.model.member;
 
 import java.io.InputStream;
-import java.util.List;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
+import easyway.mapper.MemberMapper;
 import easyway.mapper.OfficeMapper;
 
 
-public class OfficeDao {
+public class MemberDao {
 
-	private static OfficeDao dao = new OfficeDao();
+	private static MemberDao dao = new MemberDao();
 
-	public static OfficeDao getInstance() {
+	public static MemberDao getInstance() {
 		return dao;
 	}
 
@@ -33,12 +32,12 @@ public class OfficeDao {
 		return new SqlSessionFactoryBuilder().build(in);
 	}
 
-	public int insertOffice(Office office) {
+	public int insertMember(Member member) {
 		SqlSession sqlSession = getSqlSessionFactory().openSession();
 		int re = -1;
 
 		try {
-			re = sqlSession.getMapper(OfficeMapper.class).insertOffice(office);
+			re = sqlSession.getMapper(MemberMapper.class).insertMember(member);
 			if (re > 0) {
 				sqlSession.commit();
 			} else {
@@ -54,14 +53,14 @@ public class OfficeDao {
 
 		return re;
 	}
-
-	public List<Office> listOffice(int member_id) {
+	
+	public Member loginMember(String email, String password) {
+		System.out.println("로그인 dao 실행" + email +" " + password);
 		SqlSession sqlSession = getSqlSessionFactory().openSession();
-		List<Office> list = null;
+		Member member = null;
 
 		try {
-			list = sqlSession.getMapper(OfficeMapper.class).listOffice(member_id);
-
+			member = sqlSession.getMapper(MemberMapper.class).loginMember(email, password);
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -70,25 +69,43 @@ public class OfficeDao {
 			}
 		}
 
-		return list;
+		return member;
 	}
 
-	public Office detailOffice(int seq) {
-		SqlSession sqlSession = getSqlSessionFactory().openSession();
-		Office office = null;
+//	public List<Member> listOffice() {
+//		SqlSession sqlSession = getSqlSessionFactory().openSession();
+//		List<Member> list = null;
+//
+//		try {
+//			list = sqlSession.getMapper(OfficeMapper.class).listOffice();
+//
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		} finally {
+//			if (sqlSession != null) {
+//				sqlSession.close();
+//			}
+//		}
+//
+//		return list;
+//	}
 
-		try {
-			office = sqlSession.getMapper(OfficeMapper.class).detailOffice(seq);
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			if (sqlSession != null) {
-				sqlSession.close();
-			}
-		}
-
-		return office;
-	}
+//	public Member detailOffice(int seq) {
+//		SqlSession sqlSession = getSqlSessionFactory().openSession();
+//		Member office = null;
+//
+//		try {
+//			office = sqlSession.getMapper(OfficeMapper.class).detailOffice(seq);
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		} finally {
+//			if (sqlSession != null) {
+//				sqlSession.close();
+//			}
+//		}
+//
+//		return office;
+//	}
 
 	public int deleteOffice(int seq) {
 		SqlSession sqlSession = getSqlSessionFactory().openSession();
