@@ -22,6 +22,7 @@ public class Pb_MenuListAction implements Action {
 		
 		List<Pb_Menu> pbm = service.listPb_MenuService(project_id);
 		
+		request.setAttribute("project_id", project_id);
 		request.setAttribute("pbm", pbm);
 		
 		forward.setRedirect(false);

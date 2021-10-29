@@ -51,7 +51,7 @@
 	<!-- 	<div style="height: 300px; width: 200px; background: yellow; margin-left: 500px; display:none;"> -->
 	<!-- 	</div> -->
 	<div class="wrapper">
-		<a href="pb_MenuInsertForm.do">게시판 생성</a>
+		<a href="pb_MenuInsertForm.do?project_id=${project_id}">게시판 생성</a>
 		<br> <br>
 	</div>
 	
