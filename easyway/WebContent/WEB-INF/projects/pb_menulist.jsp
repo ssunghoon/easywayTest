@@ -40,6 +40,12 @@
 	.bd-placeholder-img-lg {
 		font-size: 3.5rem;
 	}
+	
+.wrapper{
+	height: 100vh;
+	margin-left: 370px;
+	margin-right: 5%;
+}
 }
 </style>
 
@@ -53,21 +59,22 @@
 	<div class="wrapper">
 		<a href="pb_MenuInsertForm.do?project_id=${project_id}">게시판 생성</a>
 		<br> <br>
-	</div>
 	
-	<table>
-		<tr>
-			<td>게시판 목록</td>
-		</tr>
-		<c:forEach var="pbm" items="${pbm}">
+	
+		<table>
 			<tr>
-				<td>게시판 ${pbm.pbm_id }</td>
-			</tr>		
-		</c:forEach>
-	</table>
-	<br>
-	
-	<br><br>
+				<td>게시판 목록</td>
+			</tr>
+			<c:forEach var="pbm" items="${pbm}">
+				<tr>
+					<td>게시판 ${pbm.pbm_id }</td>
+				</tr>		
+			</c:forEach>
+		</table>
+		<br>
+		
+		<br><br>
+	</div>
 	
 </body>
 <script
