@@ -76,7 +76,7 @@
 			<a href="noticeInsertForm.do" class="btn btn-primary pull-right">글쓰기버튼</a>
 		
 			<table class="table_table-striped"
-				style="text-align: center; border: 1px solid #dddddd">
+				style="text-align: center; border: 1px solid #dddddd;" >
 
 				<tr>
 					<th style="background-color: #eeeeee; text-align: center;">글번호
@@ -99,7 +99,7 @@
 				
 			
 				 <c:forEach var="of_board" items="${list }">
-						<tr>
+						<tr  style="background-color: #11111; text-align: center; border: 1px;">
 							<td>${of_board.ob_id }</td>
 							<td>${of_board.employee_id }</td>
 						<td>${of_board.ob_title  }</td>
