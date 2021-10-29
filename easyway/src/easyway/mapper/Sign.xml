@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="easyway.mapper.SignMapper">
+	<cache/>
+	<!-- 지출결의서 작성 -->
+	<insert id="insertSignSpend" parameterType="SpendSign">
+		insert into si_spend(
+				ss_id, sf_id, ss_range,ss_importance,ss_title,ss_content
+			)
+			values (
+				ss_seq.nextval,1,#{ss_range},#{ss_importance},#{ss_title},#{ss_content}
+			)
+	</insert>
+	
+	
+	<!-- 휴가신청서 작성 -->
+	<insert id="insertSignVacation" parameterType="VacationSign">
+		insert into si_vacation(
+				sv_id, sf_id, sv_reason, sv_type, sv_start,sv_end,sv_title
+			)
+			values (
+				sv_seq.nextval,1,#{sv_reason},#{sv_type},TO_DATE(#{sv_start},'yyyy/mm/dd')
+				,TO_DATE(#{sv_end},'yyyy/mm/dd'),#{sv_title}
+			)
+		
+	</insert>
+	
+	<!-- 기본기안서 작성 -->
+	<insert id="insertSignBasic" parameterType="BasicSign">
+		insert into si_basic(
+			sb_id, sf_id, sb_range, sb_start, sb_end,sb_importance,sb_title,sb_content
+		)
+		values (
+			si_basic_seq.nextval,1,#{sb_range},TO_DATE(#{sb_start},'yyyy/mm/dd')
+			,TO_DATE(#{sb_end},'yyyy/mm/dd'),#{sb_importance},#{sb_title},#{sb_content}
+		)
+		
+	</insert>
+	
+
+	
+	<!-- 기안함 목록 -->
+	<select id="listDraft" resultType="Sign">
+		select sign_id, sign_date
+		form sign
+		order by sign_id desc
+	</select>
+</mapper>
