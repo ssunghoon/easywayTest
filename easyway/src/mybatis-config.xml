@@ -14,6 +14,7 @@
 		<typeAlias type="easyway.model.sign.BasicSign" alias="BasicSign"/>
 		<typeAlias type="easyway.model.sign.SpendSign" alias="SpendSign"/>
 		<typeAlias type="easyway.model.sign.VacationSign" alias="VacationSign"/>
+		<typeAlias type="easyway.model.schedule.Schedule" alias="Schedule"/><!--schedule-->
 	</typeAliases>
 	
 	<environments default="development">
@@ -31,6 +32,7 @@
 		<mapper resource="easyway/mapper/Member.xml"/>
 		<mapper resource="easyway/mapper/Project.xml"/>
 		<mapper resource="easyway/mapper/Sign.xml"/> 
+		<mapper resource="easyway/mapper/Schedule.xml"/><!--schedule-->
 	</mappers>
 	
 </configuration>
