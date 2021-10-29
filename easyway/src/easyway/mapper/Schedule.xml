@@ -14,12 +14,12 @@
 			#{schedule_content}, #{schedule_importance}, #{schedule_private}
 		)
 	</insert>
-	
+<!-- 	
 	<select id="schedulelist" parameterType="Search" resultType = "Schedule">
 		select * from schedule
 		 <if test="area !=null">
 			<where>
-				<!-- where (title LIKE %홍길동% OR writer LIKE %홍길동%) -->
+				where (title LIKE %홍길동% OR writer LIKE %홍길동%)
 				<foreach collection="area" item="item" separator="OR"
 					open="(" close=")">
 					${item} LIKE #{searchKey}
@@ -28,7 +28,7 @@
 		</if>
 		order by schedule_id desc
 	</select>
-	
+	 -->
 	<!-- 
 	<select id="detailBoard" parameterType="int" resultType = "Board">
 		select * from board where seq = #{seq}
