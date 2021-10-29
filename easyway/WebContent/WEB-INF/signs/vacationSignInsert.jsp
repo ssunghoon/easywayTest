@@ -51,15 +51,15 @@
 		<div class="sign">
 			<h4>휴가 신청서</h4>
 			<form action="insertVacationAction.do" method="post" accept-charset="utf-8">
-				제목 : <input type="text" name="ss_title"><br>
-				휴가종류 : <input type="radio" name="sv_type" id="first"><label for="first">연차</label>
-						<input type="radio" name="sv_type" id="second"><label for="second">반차</label>
-						<input type="radio" name="sv_type" id="third"><label for="third">포상</label>
-						<input type="radio" name="sv_type" id="fourth"><label for="fourth">경조사</label><br>
+				제목 : <input type="text" name="sv_title"><br>
+				휴가종류 : <input type="radio" name="sv_type" id="first" value="연차"><label for="first">연차</label>
+						<input type="radio" name="sv_type" id="second" value="반차"><label for="second">반차</label>
+						<input type="radio" name="sv_type" id="third" value="포상"><label for="third">포상</label>
+						<input type="radio" name="sv_type" id="fourth" value="경조사"><label for="fourth">경조사</label><br>
 				휴가 시작일 : <input type="date" name="sv_start"><br>
 				휴가 종료일 : <input type="date" name="sv_end"><br>
 				사유 <br>
-				<textarea rows="6" cols="70" name="ss_reason"></textarea>
+				<textarea rows="6" cols="70" name="sv_reason"></textarea>
 				<br>
 				<input type="submit" value="등록">
 			</form>

@@ -37,7 +37,7 @@
 			,TO_DATE(#{sb_end},'yyyy/mm/dd'),#{sb_importance},#{sb_title},#{sb_content}
 		)
 		
-	</insert >
+	</insert>
 	
 
 	
