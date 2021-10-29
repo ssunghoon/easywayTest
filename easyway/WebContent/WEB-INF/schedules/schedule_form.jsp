@@ -168,6 +168,7 @@
 }
 
   body {
+   	margin-top: 40px;
     margin: 0px 10px;
     padding: 0;
     font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
@@ -198,11 +199,6 @@
     right: 50px;
     }
   /*-----*/
-  body {
-    margin-top: 40px;
-    font-size: 14px;
-    font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
-  }
 
   #external-events {
     position: fixed;

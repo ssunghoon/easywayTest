@@ -16,7 +16,6 @@ public class ScheduleInsertAction implements Action {
 		
 		//서비스호출
 		service.ScheduleInsertService(request);
-
 		forward.setRedirect(true);
 //		forward.setPath("scheduleInsertAction.do");
 		forward.setPath("list.do");//수정
