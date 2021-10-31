@@ -40,6 +40,12 @@
 	.bd-placeholder-img-lg {
 		font-size: 3.5rem;
 	}
+	
+.wrapper{
+	height: 100vh;
+	margin-left: 370px;
+	margin-right: 5%;
+}
 }
 </style>
 
@@ -50,7 +56,7 @@
 	<jsp:include page="../public/sidebar.jsp" />
 	<!-- 	<div style="height: 300px; width: 200px; background: yellow; margin-left: 500px; display:none;"> -->
 	<!-- 	</div> -->
-<!-- 	<div class="wrapper"> -->
+ 	<div class="wrapper">
 <!-- 		<a href="projectInsertForm.do">프로젝트 생성</a> -->
 		<button type="button" class="btn btn-primary" data-bs-toggle="modal"
 			data-bs-target="#staticBackdrop">프로젝트 생성</button>

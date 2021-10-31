@@ -40,6 +40,12 @@
 	.bd-placeholder-img-lg {
 		font-size: 3.5rem;
 	}
+	
+.wrapper{
+	height: 100vh;
+	margin-left: 370px;
+	margin-right: 5%;
+}
 }
 </style>
 

@@ -1,0 +1,122 @@
+@charset "UTF-8";
+
+.wrapper{
+	height: 100vh;
+	margin-left: 370px;
+	margin-right: 5%;
+}
+
+.row > div{
+	padding: 0 50px 100px 50px;
+	box-sizing: border-box;
+}
+
+h4{
+	font-size: 1.1rem;
+	font-weight: bold;
+	margin-bottom: 30px;
+	border-left: 5px solid #0D6EFD;
+	padding-left: 10px; 
+}
+
+.btn{
+	background: #0D6EFD;
+	color: white;
+}
+
+.row > div > div{
+	width: 100%;
+	border-radius: 10px;
+	border: 1px solid #ddd;
+	padding: 30px;
+}
+
+.list-inline{
+	width: 90%;
+	padding-left: 10%;
+	margin-bottom: 0;
+}
+
+.list-inline-item{
+	width:30%;
+	height: 100%;
+	border-right: 1px solid #eee;
+	padding: 10px;
+}
+
+.list-inline-item:last-child{
+	border-right: none;
+}
+
+.list-inline-item > span{
+	display: block;
+	text-align: center;
+	font-size: 1rem;
+}
+
+.list-inline-item > span:first-child{
+	padding-bottom: 10px;
+}
+
+
+/* id별 css ----------------------------------- */
+
+#attendanceStatus{
+	padding-top: 40px;
+	box-sizing: border-box;
+}
+
+#clock{
+	text-align: center;
+	font-family: 'Oxanium', cursive;
+	font-size: 3.5rem;
+	color: #0D6EFD;
+	margin-bottom: 10px;
+}
+
+#workCheck > div{
+	height: 280px;
+}
+
+#workCheck ul li{
+	border-right: none;
+}
+
+#workCheck ul li a{
+	display: block;
+	width: 60px;
+	height: 60px;
+	text-align: center;
+	font-size: 3rem;
+	margin-bottom: 25px;
+}
+
+#workStatus >div{
+	height: 280px;
+	padding-top: 55px;
+}
+
+#workStatus ul li{
+	margin-bottom: 40px;
+	color: #0D6EFD;
+}
+
+#workStatus div ul li span{
+	margin-left: 30px;
+	color: #666;
+}
+
+#vacationStatus div{
+	padding-left: 30px;
+}
+
+#vacationStatus div ul li:last-of-type{
+	position: relative;
+}
+
+#vacationStatus div ul li button{
+	position: absolute;
+	top: -120%;
+	left: 45%;
+}
+
