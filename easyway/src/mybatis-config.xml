@@ -17,7 +17,12 @@
 		<typeAlias type="easyway.model.schedule.Schedule" alias="Schedule"/><!--schedule-->
 		<typeAlias type="easyway.model.notice.Notice" alias="Notice"/>
 		<typeAlias type="easyway.model.schedule.Schedule" alias="Schedule"/>
-	</typeAliases>
+			<typeAlias type="easyway.model.notice.Search" alias="Search"/>
+			<typeAlias type="easyway.model.notice.Employee" alias="Employee"/>
+			<typeAlias type="easyway.model.notice.DepartMent" alias="DepartMent"/>
+			
+	
+	</typeAliases> 
 	
 	<environments default="development">
 		<environment id="development">

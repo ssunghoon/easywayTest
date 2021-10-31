@@ -31,6 +31,8 @@ public class NoticeDao {
 
 	}
 
+	//여기서 re는 db에 데이터가 잘 들어갔는지 확인해준다
+	//양수면 데이터 들어간거 안들어가면 음수
 	public int noticeInsert(Notice notice) {
 		SqlSession sqlSession = getSqlSessionFactory().openSession();
 		int re = -1;

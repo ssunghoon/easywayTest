@@ -10,7 +10,7 @@ public class NoticeInsertFormAciton implements NoticeAction{
 			, HttpServletResponse response) throws Exception {
 		NoticeActionForward forward = new NoticeActionForward();
 	forward.setRedirect(false);
-	forward.setPath("/WEB-INF/notice/noticerInsertForm.jsp");
+	forward.setPath("/WEB-INF/notices/noticerInsertForm.jsp");
 	System.out.println("asdfasdf");
 		return forward;
 	}

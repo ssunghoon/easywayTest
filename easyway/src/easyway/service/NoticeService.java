@@ -1,26 +1,18 @@
 package easyway.service;
 
-import java.io.File;
-import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-import com.oreilly.servlet.MultipartRequest;
-import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 import easyway.model.notice.Notice;
 import easyway.model.notice.NoticeDao;
-import easyway.model.notice.Search;
-import easyway.model.notice.ImageUtil;
-import easyway.model.notice.ListModel;
 
 public class NoticeService {
 	private static NoticeService service = new NoticeService();
 	private static NoticeDao dao;
-	private static final int PAGE_SIZE = 2;
+	/* private static final int PAGE_SIZE = 2; */
 
 	public static NoticeService getInstance() {
 		dao = NoticeDao.getIntstance();
@@ -39,14 +31,13 @@ public class NoticeService {
 		 */
 
 	Notice notice = new Notice();
-	notice.setObm_id(Integer.parseInt(request.getParameter("obm_id")));
+	notice.setDepartment_id(Integer.parseInt(request.getParameter("department_id")));
 	notice.setEmployee_id(Integer.parseInt(request.getParameter("employee_id")));
 	notice.setOb_title(request.getParameter("ob_title"));
 	notice.setOb_content(request.getParameter("ob_content"));
 	notice.setOb_file_path(request.getParameter("ob_file_path"));
-	notice.setOb_type(request.getParameter("ob_type"));
-	
-	/*// 파일 업로드 시 파일 이름 DB 저장
+System.out.println(request.getParameter("ob_content"));
+		/*// 파일 업로드 시 파일 이름 DB 저장
 			if (multi.getFilesystemName("ob_file_path") != null) {
 				String ob_file_path = (String) multi.getFilesystemName("ob_file_path");
 				notice.setOb_file_path(ob_file_path);

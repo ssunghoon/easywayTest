@@ -51,32 +51,19 @@
 </head>
 <body>
 	<div class="container">
-		<header
-			class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-			<a href="/"
-				class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-				<svg class="bi me-2" width="40" height="32">
-					<use xlink:href="#bootstrap"></use></svg> <span class="fs-4">Simple
-					header</span>
-			</a>
-			<ul class="nav nav-pills">
-				<li class="nav-item"><a href="#" class="nav-link active"
-					aria-current="page">Home</a></li>
-				<li class="nav-item"><a href="#" class="nav-link">Features</a></li>
-
-			</ul>
-		</header>
+	
 	</div>
 <body>
 	<jsp:include page="../public/sidebar.jsp" />
 
 
 	<div class="container">
+	 
 		<div class="row">
-			<a href="noticeInsertForm.do" class="btn btn-primary pull-right">글쓰기버튼</a>
-		
+			
+	
 			<table class="table_table-striped"
-				style="text-align: center; border: 1px solid #dddddd;" >
+				style="text-align: center; border: 1px solid #dddddd; margin-top: 100px; margin-left: 100px;" >
 
 				<tr>
 					<th style="background-color: #eeeeee; text-align: center;">글번호
@@ -89,12 +76,14 @@
 						</th>
 					<th style="background-color: #eeeeee; text-align: center;">파일첨부
 						</th>
-					<th style="background-color: #eeeeee; text-align: center;">게시판종류
+					<th style="background-color: #eeeeee; text-align: center;">날짜
+				 </th>
+				 	<th style="background-color: #eeeeee; text-align: center;">부서번호
 				 </th>
 			
 
 				 
-				 
+				
 				</tr>
 				
 			
@@ -105,19 +94,20 @@
 						<td>${of_board.ob_title  }</td>
 							<td>${ of_board.ob_content}</td>
 							<td>${of_board.ob_file_path }</td>
-							<td>${of_board.ob_type }</td>
-
+							<td>${of_board.ob_date }</td>
+							<td>${of_board.department_id }</td>
 						</tr>
 				</c:forEach> 
 		
 			</table>
-		
+		<a href="noticeInsertForm.do" class="btn btn-primary pull-right" style="margin-left: 100px;">글쓰기버튼</a>
 	<form action="listAction.do" method="post">
 		<input type="checkbox" name="area" value="ob_title">제목 <input
 						type="checkbox" name="area" value="employee_id">작성자 <input
 						type="text" name="searchKey" size="10"> <input
 						type="submit" value="검색">
 	</form>
+		
 		
 		</div>
 	</div>
