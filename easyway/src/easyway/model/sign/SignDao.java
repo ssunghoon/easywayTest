@@ -4,7 +4,6 @@ import java.io.InputStream;
 import java.util.List;
 
 import org.apache.ibatis.io.Resources;
-import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
@@ -30,6 +29,26 @@ public class SignDao {
 			e.printStackTrace();
 		}
 		return new SqlSessionFactoryBuilder().build(in);
+	}
+	public int insertSign(Sign sign) {
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		int re = -1;
+		
+		 try {
+			 re = sqlSession.getMapper(SignMapper.class).insertSign(sign);
+			 if(re>0) {
+				 sqlSession.commit();
+			 }else {
+				 sqlSession.rollback();
+			 }
+		 }catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(sqlSession != null) {
+				sqlSession.close();
+			}
+		}
+		 return re;
 	}
 	
 	// 기본기안서 등록
@@ -97,11 +116,11 @@ public class SignDao {
 		 return re;
 	}
 
-	public List<Sign> draftListSign(int startRow, Search search){
+	public List<Sign> draftListSign(){
 		SqlSession sqlSession = getSqlSessionFactory().openSession();
 		List<Sign> list = null;
 		try {
-			list = sqlSession.getMapper(SignMapper.class).listDraftSign(search, new RowBounds(startRow, 2));
+			list = sqlSession.getMapper(SignMapper.class).listDraftSign();
 		}catch(Exception e) {
 			e.printStackTrace();
 		}finally {
@@ -112,19 +131,4 @@ public class SignDao {
 		return list;
 	}
 	
-	// 기안함
-	public int countDraft(Search search) {
-		SqlSession sqlSession = getSqlSessionFactory().openSession();
-		int re = 0;
-		try {
-			re = sqlSession.getMapper(SignMapper.class).countDraft(search);
-		} catch (Exception e) {
-		e.printStackTrace();
-		}finally {
-			if(sqlSession != null) {
-				sqlSession.close();
-		}
-	}
-		return re;
-	}
 }

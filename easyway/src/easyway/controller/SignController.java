@@ -14,6 +14,8 @@ import easyway.action.ActionForward;
 import easyway.action.sign.BasicInsertAction;
 import easyway.action.sign.BasicInsertFormAction;
 import easyway.action.sign.DraftListAction;
+import easyway.action.sign.SignInsertAction;
+import easyway.action.sign.SignInsertFormAction;
 import easyway.action.sign.SignInsertListAction;
 import easyway.action.sign.SpendInsertAction;
 import easyway.action.sign.SpendInsertFormAction;
@@ -37,8 +39,23 @@ public class SignController extends HttpServlet{
     	Action action = null;
     	ActionForward forward = null;
     	
+    	// 기안서 작성 시작폼
+    	if(command.equals("insertSignForm.do")) {
+    		action = new SignInsertFormAction();
+    		try {
+    			forward = action.execute(request, response);
+    		}catch(Exception e) {
+    			e.printStackTrace();
+    		}
+    	}else if(command.equals("insertSignAction.do")) {
+    		action =  new SignInsertAction();
+    		try {
+    			forward = action.execute(request, response);
+    		}catch (Exception e) {
+    			e.printStackTrace();
+    		}
     	// begin 기본 기안서
-    	if(command.equals("insertBasicForm.do")) {
+		}else if(command.equals("insertBasicForm.do")) {
     		action = new BasicInsertFormAction();
     		try {
     			forward = action.execute(request, response);

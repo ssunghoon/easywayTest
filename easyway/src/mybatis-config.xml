@@ -10,7 +10,6 @@
 		<typeAlias type="easyway.model.sign.BasicSign" alias="BasicSign"/>
 		<typeAlias type="easyway.model.sign.SpendSign" alias="SpendSign"/>
 		<typeAlias type="easyway.model.sign.VacationSign" alias="VacationSign"/>
-		<typeAlias type="easyway.model.sign.Search" alias="Search"/>
 	</typeAliases>
 	
 	<environments default="development">

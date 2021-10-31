@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <c:set var="path" value="${pageContext.request.contextPath}"/>
 	
 <!doctype html>
@@ -37,6 +38,7 @@
 		font-size: 3.5rem;
 	}
 }
+ 
 </style>
 
 
@@ -47,15 +49,21 @@
 <jsp:include page="../public/sidebar.jsp" />
 
 	<div id="wrap">
-		<div class="btn-group btn-group-lg col-lg-11" style="margin:50px">
-		  <button type="button" class="btn btn-primary" onclick="location.href='signInsertListAction.do?sign_id=${sign.sign_id}'">기안작성</button>
-		  <button type="button" class="btn btn-primary" onclick="location.href='draftListAction.do'">기안함</button>
-		  <button type="button" class="btn btn-primary">결재함</button>
-		</div>
-		<div id="middleBox">
-			<button class="btn btnGray" onclick="location.href='insertBasicForm.do?sf_id=1'" >기본기안서</button>
-			<button class="btn btnGray" onclick="location.href='insertSpendForm.do?sf_id=2'" >지출결의서</button>
-			<button class="btn btnGray" onclick="location.href='insertVacationForm.do?sf_id=3'" >휴가신청서</button>
+		<div class="sign">
+		
+			<h4>기안함</h4><br>
+			<table class="table table-bordered">
+				<tr>
+					<td><b>제목</b></td>
+					<td><b>내용</b></td>
+				</tr>
+				<c:forEach var="sign" items="${draftList }">
+				<tr>
+					<td>${sign.title }</td>
+					<td>${sign.content }</td>
+				</tr>
+				</c:forEach>
+			</table>
 		</div>
 	</div>
 </body>
