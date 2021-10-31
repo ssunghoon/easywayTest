@@ -1,0 +1,130 @@
+@charset "UTF-8";
+
+body{
+    overflow: hidden;
+}
+
+.wrapper{
+	height: 100vh;
+	margin-left: 370px;
+	margin-right: 5%;
+	padding-top: 50px;
+}
+
+/* dock & grid ---------------------------------------------- */
+
+.dock{
+    width: 1256px;
+	height: 750px;
+    border: 3px dotted #ddd;
+    border-radius: 10px;
+    opacity: 1;
+}
+
+.dockTip{
+    font-size: 30px;
+    font-weight: bold;
+    color: #bbb;
+    position: absolute;
+    top: 360px;
+    left: 870px;
+}
+
+#widgetBtn{
+    position: absolute;
+    color: #aaa;
+    top: 15px;
+    right: 80px;
+    cursor: pointer;
+}
+
+#widgetBtn>div:nth-child(1){
+    font-size: 15px;
+    float: left;
+    padding-top:9px;
+    box-sizing: border-box;
+}
+
+#widgetBtn>div:nth-child(2){
+    float: left;
+    font-size: 25px;
+    padding-left: 20px;
+}
+
+#widgetBar{
+    position: fixed;
+    right: -30%;
+    top: 0;
+    width: 230px;
+    height: 100vh;
+    z-index: 11px;
+    box-sizing: border-box;
+    background: #eee;
+}
+
+#closeBtn{
+    font-size: 30px;
+    color: #aaa;
+    position: absolute;
+    width: 200px;
+    height: 50px;
+    padding-left: 180px;
+    top: 20px;
+    right: 30px;
+    cursor: pointer;
+    z-index: 9999;
+}
+
+/* 위젯 섬네일 */
+
+.widgetThumbWrapper{
+    width: 150px;
+    height: 150px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.widgetThumb{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.widgetThumb>p{
+    display: none;
+}
+
+/* 위젯 */
+
+.widgetConWrapper{
+    width: 375px;
+    height: 375px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.widgetCon{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.widgetCloseBtn{
+    font-size: 20px;
+    color: #999;
+    position: absolute;
+    top: 15px;
+    right: 27px;
+    cursor: pointer;
+    z-index: 9999;
+    display: none;
+}
+
+
+
+/* 개별 위젯 css----------------------------------------------------------------- */
+/* #widgetThumb1{
+
+} */
