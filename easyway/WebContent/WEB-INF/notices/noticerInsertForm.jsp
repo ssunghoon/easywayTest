@@ -52,11 +52,11 @@
 	</div>
 	<jsp:include page="../public/sidebar.jsp" />
 
-	<div class="container">
+	<div class="container" style=" margin-left: 370px;">
 		<div class="row">
 			<form method="post" action="noticeInsertAction.do">
 				<table class="table_table-striped"
-					style="text-align: center; border: 1px solid #dddddd">
+					style="text-align: center; border: 1px solid #dddddd; margin-top: 50px;">
 					<thead>
 						<tr>
 							<th
@@ -70,25 +70,22 @@
 							<td><input type="text" class="form-control"
 								placeholder="사원번호" name="employee_id"></td>
 						</tr>
+							<tr>
+							<td><input type="text" class="form-control"
+								placeholder="부서번호" name="department_id"></td>
+						</tr>
 						<tr>
 							<td><input type="text" class="form-control"
 								placeholder="글제목" name="ob_title"></td>
-						</tr>
-						<tr>
-							<td><textarea class="form-control" placeholder="글내용"
-									name="ob_content"></textarea></td>
 						</tr>
 						<tr>
 							<td><input type="text" class="form-control"
 								placeholder="파일첨부" name="ob_file_path"></td>
 						</tr>
 						<tr>
-							<td><input type="text" class="form-control"
-								placeholder="날짜" name="ob_date"></td>
-						</tr>
-							<tr>
-							<td><input type="text" class="form-control"
-								placeholder="부서번호" name="department_id"></td>
+							<td><textarea rows="6" cols="70"
+							 class="form-control" placeholder="글내용"
+									name="ob_content"></textarea></td>
 						</tr>
 
 
