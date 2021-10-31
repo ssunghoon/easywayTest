@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+	.btn-group {
+		margin:50px;
+	}
+	.btn {
+	 	padding: 10px 50px 10px 50px;
+	}
+	#wrap {
+		margin-left: 400px;
+		margin-right: 100px;
+		
+	}
+	#middleBox {
+		margin:50px;
+		margin-left: 70px;
+	}
+	.btnGray {
+		padding:110px;
+		margin:15px;
+		border: 1px solid #D5D5D5;
+		border-radius: 30px;
+		font-size: 20px;
+	}
+	.sign {
+	padding-top:50px;
+}

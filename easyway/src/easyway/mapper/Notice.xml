@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+
+<mapper namespace="easyway.mapper.NoticeMapper">
+	<cache />
+
+	<insert  id="noticeInsert" parameterType="Notice">
+	insert into
+		OF_BOARD(ob_id,
+		employee_id, department_id, ob_title, ob_content, ob_file_path, ob_date, ob_view
+		)values(ob_seq.nextval, #{employee_id}, #{department_id}, #{ob_title},	#{ob_content}, #{ob_file_path}, sysdate, 0)
+    
+	</insert>
+
+<select id="noticeList"  resultType="Notice">
+		select * from OF_BOARD
+	</select>
+
+<select id="noticeJoin1" resultType="Employee">
+select * from of_board join employee on of_board.employee_id = employee.employee_id
+</select>
+	
+</mapper>

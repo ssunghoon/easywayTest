@@ -46,7 +46,7 @@ public class AttendanceService {
 		return dao.attendanceOutUpdate(attendance);
 	}
 	
-	public int AttendanceEndUpdateService() throws Exception{
+	public int attendanceEndUpdateService() throws Exception{
 		Attendance attendance = new Attendance();
 		Timestamp timestamp = new Timestamp(System.currentTimeMillis());
         
@@ -56,6 +56,12 @@ public class AttendanceService {
         attendance.setAttendance_out("");
         attendance.setAttendance_end(sdf.format(timestamp));
 		
-		return dao.AttendanceEndUpdate(attendance);
+		return dao.attendanceEndUpdate(attendance);
 	}
+	
+	public Attendance attendanceTodayService(int employee_id) throws Exception{
+		Attendance attendance = dao.attendanceToday(employee_id);
+		return attendance;
+	}
+		
 }

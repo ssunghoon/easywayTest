@@ -1,25 +1,16 @@
 package easyway.action;
 
 public class ActionForward {
-	private boolean isRedirect;
+
+	// 경로, 이동방식을 결정
+	private boolean isRedirect; // false -> Dispatcher
 	private String path;
-	
-	public ActionForward() {}
-
-	public ActionForward(boolean isRedirect, String path) {
-		super();
-		this.isRedirect = isRedirect;
-		this.path = path;
-	}
-
 	public boolean isRedirect() {
 		return isRedirect;
 	}
-
 	public void setRedirect(boolean isRedirect) {
 		this.isRedirect = isRedirect;
 	}
-
 	public String getPath() {
 		return path;
 	}
@@ -28,4 +19,5 @@ public class ActionForward {
 		this.path = path;
 	}
 	
+
 }

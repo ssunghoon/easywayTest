@@ -18,7 +18,6 @@
 	<select id="scheduleList" resultType = "Schedule">
 		select * from schedule
 	</select>
-	
 	<!-- 
 	<select id="detailBoard" parameterType="int" resultType = "Board">
 		select * from board where seq = #{seq}

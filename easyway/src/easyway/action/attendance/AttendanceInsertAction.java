@@ -15,8 +15,8 @@ public class AttendanceInsertAction implements Action {
 		
 		service.attendanceInsertService();
 		
-		forward.setRedirect(false);
-		forward.setPath("/attendance.jsp");
+		forward.setRedirect(true);
+		forward.setPath("attendanceTodayAction.do");
 		
 		return forward;
 	}
