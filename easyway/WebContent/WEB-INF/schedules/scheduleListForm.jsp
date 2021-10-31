@@ -169,10 +169,9 @@
 
   body {
    	margin-top: 40px;
-    margin: 0px 10px;
+    margin: 0px;
     padding: 0;
-    font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
-    font-size: 14px;
+   /*  font-family: Arial, Helvetica Neue, Helvetica, sans-serif; */
     position: relative;
   }
 
@@ -197,6 +196,7 @@
     position: absolute;
     top: 100px;
     right: 50px;
+    font-size: 14px;
     }
   /*-----*/
   #external-events {
@@ -234,6 +234,7 @@
 
   #calendar-wrap {
     margin-left: 300px;
+    font-size: 14px;
   }
 
   #calendar {
