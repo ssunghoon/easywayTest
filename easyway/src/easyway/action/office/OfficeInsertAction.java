@@ -18,7 +18,7 @@ public class OfficeInsertAction implements Action {
 		System.out.println("오피스 인서트 액션 실행");
 		//이하 비즈니스 호출 작업
 		int result = service.insertOfficeService(request);
-		result = -1;
+		
 		request.setAttribute("insertResult", result);
 		
 		//페이지 이동 (listAction.do) = .do에서 .do로 이동 = 새로운 요청

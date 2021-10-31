@@ -9,4 +9,5 @@ public interface ProjectMapper {
 	int insertProject(Project project);
 	List<Project> listProject();
 	List<Pb_Menu> listPb_Menu(int project_id);
+	int insertPb_Menu(int project_id);
 };

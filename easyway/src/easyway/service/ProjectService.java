@@ -37,4 +37,7 @@ public class ProjectService {
 		return dao.listPb_Menu(project_id);
 	}
 	
+	public int insertPb_MenuService(int project_id)throws Exception {
+		return dao.insertPb_Menu(project_id);
+	}
 }

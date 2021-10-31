@@ -48,21 +48,7 @@
 </head>
 <body>
 	<div class="container">
-		<header
-			class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-			<a href="/"
-				class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-				<svg class="bi me-2" width="40" height="32">
-					<use xlink:href="#bootstrap"></use></svg> <span class="fs-4">Simple
-					header</span>
-			</a>
-			<ul class="nav nav-pills">
-				<li class="nav-item"><a href="#" class="nav-link active"
-					aria-current="page">Home</a></li>
-				<li class="nav-item"><a href="#" class="nav-link">Features</a></li>
 
-			</ul>
-		</header>
 	</div>
 	<jsp:include page="../public/sidebar.jsp" />
 
@@ -79,10 +65,7 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td><input type="text" class="form-control"
-								placeholder="게시판 번호" name="obm_id"></td>
-						</tr>
+					
 						<tr>
 							<td><input type="text" class="form-control"
 								placeholder="사원번호" name="employee_id"></td>
@@ -101,7 +84,11 @@
 						</tr>
 						<tr>
 							<td><input type="text" class="form-control"
-								placeholder="게시판종류" name="ob_type"></td>
+								placeholder="날짜" name="ob_date"></td>
+						</tr>
+							<tr>
+							<td><input type="text" class="form-control"
+								placeholder="부서번호" name="department_id"></td>
 						</tr>
 
 

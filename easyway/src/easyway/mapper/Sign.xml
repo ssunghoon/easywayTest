@@ -4,6 +4,14 @@
 
 <mapper namespace="easyway.mapper.SignMapper">
 	<cache/>
+	<insert id="insertSign" parameterType="Sign">
+		insert into sign(
+				sign_id, employee_id, sign_date
+			)
+			values (
+				sign_seq.nextval,1,SYSDATE
+			)	
+	</insert>
 	<!-- 지출결의서 작성 -->
 	<insert id="insertSignSpend" parameterType="SpendSign">
 		insert into si_spend(
@@ -42,9 +50,11 @@
 
 	
 	<!-- 기안함 목록 -->
-	<select id="listDraft" resultType="Sign">
-		select sign_id, sign_date
-		form sign
-		order by sign_id desc
+	<select id="listDraftSign" resultType="Sign">
+		select ss_title as title, ss_content as content from si_spend
+		union
+		select sv_title as title, sv_reason as content from si_vacation
+		union
+		select sb_title as title, sb_content as content from si_basic
 	</select>
 </mapper>

@@ -6,7 +6,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import easyway.model.notice.Notice;
-import easyway.model.notice.ListModel;
 import easyway.service.NoticeService;
 
 public class NoticeListAction implements NoticeAction {
@@ -20,7 +19,7 @@ public class NoticeListAction implements NoticeAction {
 		request.setAttribute("list", list);
 		
 		forward.setRedirect(false);
-		forward.setPath("/WEB-INF/notice/noticeList.jsp");
+		forward.setPath("/WEB-INF/notices/noticeList.jsp");
 		
 		return forward;
 	}
