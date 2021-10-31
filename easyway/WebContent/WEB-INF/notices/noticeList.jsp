@@ -59,11 +59,11 @@
 
 	<div class="container">
 	 
-		<div class="row">
+		<div class="row" style="margin-left: 200px;">
 			
 	
 			<table class="table_table-striped"
-				style="text-align: center; border: 1px solid #dddddd; margin-top: 100px; margin-left: 100px;" >
+				style="text-align: center; border: 1px solid #dddddd; margin-top: 50px; " >
 
 				<tr>
 					<th style="background-color: #eeeeee; text-align: center;">글번호
@@ -77,8 +77,6 @@
 					<th style="background-color: #eeeeee; text-align: center;">파일첨부
 						</th>
 					<th style="background-color: #eeeeee; text-align: center;">날짜
-				 </th>
-				 	<th style="background-color: #eeeeee; text-align: center;">부서번호
 				 </th>
 			
 
@@ -95,18 +93,11 @@
 							<td>${ of_board.ob_content}</td>
 							<td>${of_board.ob_file_path }</td>
 							<td>${of_board.ob_date }</td>
-							<td>${of_board.department_id }</td>
 						</tr>
 				</c:forEach> 
 		
 			</table>
-		<a href="noticeInsertForm.do" class="btn btn-primary pull-right" style="margin-left: 100px;">글쓰기버튼</a>
-	<form action="listAction.do" method="post">
-		<input type="checkbox" name="area" value="ob_title">제목 <input
-						type="checkbox" name="area" value="employee_id">작성자 <input
-						type="text" name="searchKey" size="10"> <input
-						type="submit" value="검색">
-	</form>
+		<a href="noticeInsertForm.do" class="btn btn-primary pull-right">글쓰기버튼</a>
 		
 		
 		</div>
