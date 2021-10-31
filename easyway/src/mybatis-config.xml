@@ -8,8 +8,21 @@
 		<typeAlias type="easyway.model.office.Office" alias="Office"/>
 		<typeAlias type="easyway.model.member.Member" alias="Member"/>
 		<typeAlias type="easyway.model.attendance.Attendance" alias="Attendance"/>
+		<typeAlias type="easyway.model.Project" alias="Project"/>
+		<typeAlias type="easyway.model.Pb_Menu" alias="Pb_Menu"/>
+		<typeAlias type="easyway.model.sign.Sign" alias="Sign"/>
+		<typeAlias type="easyway.model.sign.BasicSign" alias="BasicSign"/>
+		<typeAlias type="easyway.model.sign.SpendSign" alias="SpendSign"/>
+		<typeAlias type="easyway.model.sign.VacationSign" alias="VacationSign"/>
+		<typeAlias type="easyway.model.schedule.Schedule" alias="Schedule"/><!--schedule-->
+		<typeAlias type="easyway.model.notice.Notice" alias="Notice"/>
+		<typeAlias type="easyway.model.schedule.Schedule" alias="Schedule"/>
+			<typeAlias type="easyway.model.notice.Search" alias="Search"/>
+			<typeAlias type="easyway.model.notice.Employee" alias="Employee"/>
+			<typeAlias type="easyway.model.notice.DepartMent" alias="DepartMent"/>
 		<typeAlias type="easyway.model.office.OfficeCreate" alias="OfficeCreate"/>
-	</typeAliases>
+	
+	</typeAliases> 
 	
 	<environments default="development">
 		<environment id="development">
@@ -24,6 +37,10 @@
 		<mapper resource="easyway/mapper/Attendance.xml"/>
 		<mapper resource="easyway/mapper/Office.xml"/>
 		<mapper resource="easyway/mapper/Member.xml"/>
+		<mapper resource="easyway/mapper/Project.xml"/>
+		<mapper resource="easyway/mapper/Sign.xml"/> 
+		<mapper resource="easyway/mapper/Schedule.xml"/><!--schedule-->
+		<mapper resource="easyway/mapper/Notice.xml"/> 
 	</mappers>
 	
 </configuration>

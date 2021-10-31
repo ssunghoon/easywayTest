@@ -1,23 +1,21 @@
-package easyway.action;
+package easyway.action.notice;
 
-public class ActionForward {
-
-	// 경로, 이동방식을 결정
-	private boolean isRedirect; // false -> Dispatcher
+public class NoticeActionForward {
+	private boolean isRedirect;
 	private String path;
+
 	public boolean isRedirect() {
 		return isRedirect;
 	}
+	
 	public void setRedirect(boolean isRedirect) {
 		this.isRedirect = isRedirect;
 	}
+
 	public String getPath() {
 		return path;
 	}
-
 	public void setPath(String path) {
 		this.path = path;
 	}
-	
-
 }
