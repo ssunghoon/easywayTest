@@ -52,11 +52,6 @@
 		  <button type="button" class="btn btn-primary" onclick="location.href='draftListAction.do'">기안함</button>
 		  <button type="button" class="btn btn-primary">결재함</button>
 		</div>
-		<div id="middleBox">
-			<button class="btn btnGray" onclick="location.href='insertBasicForm.do?sf_id=1'" >기본기안서</button>
-			<button class="btn btnGray" onclick="location.href='insertSpendForm.do?sf_id=2'" >지출결의서</button>
-			<button class="btn btnGray" onclick="location.href='insertVacationForm.do?sf_id=3'" >휴가신청서</button>
-		</div>
 	</div>
 </body>
 
