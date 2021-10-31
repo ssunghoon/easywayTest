@@ -14,11 +14,11 @@ public class Pb_MenuInsertAction implements Action{
 		ActionForward forward = new ActionForward();
 		ProjectService service = ProjectService.getInstance();
 		
-		int seq = Integer.parseInt(request.getParameter(""));
-		service.insertProjectService(request);
+		int project_id = Integer.parseInt(request.getParameter("project_id"));
+		service.insertPb_MenuService(project_id);
 		
 		forward.setRedirect(true);
-		forward.setPath("pb_menuListAction.do?project_id="+seq);
+		forward.setPath("pb_menuListAction.do?project_id="+project_id);
 		
 		return forward;
 	}

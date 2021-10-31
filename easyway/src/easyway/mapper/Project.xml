@@ -24,6 +24,10 @@
 		SELECT * FROM PB_MENU WHERE PROJECT_ID = #{project_id}
 	</select>
 	
+	<insert id="insertPb_Menu" parameterType="int">
+		INSERT INTO PB_MENU VALUES(PBM_SEQ.nextval, #{project_id})
+	</insert>
+	
 </mapper>
 
 

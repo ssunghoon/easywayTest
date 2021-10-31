@@ -86,6 +86,30 @@ public class ProjectDao {
 		}
 		return list;
 	}
+
+	public int insertPb_Menu(int project_id) {
+		SqlSession sqlSession = getSqlSessionFactory().openSession(); //String resource ="mybatis-config.xml"; 불러온것
+		int re = -1;
+		
+		try {
+			//re = sqlSession.insert("kosta.mapper.BoardMapper.insertBoard", board); //namespace+id명
+			re = sqlSession.getMapper(ProjectMapper.class).insertPb_Menu(project_id); //네임스페이스를 안써줘도되는 다른 장점이 있음
+			if(re>0) {
+				sqlSession.commit();
+			}else {
+				sqlSession.rollback();
+			}
+			
+			System.out.println(re);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(sqlSession != null) {
+				sqlSession.close();
+			}
+		}
+		return re;
+	}
 	
 	
 }
