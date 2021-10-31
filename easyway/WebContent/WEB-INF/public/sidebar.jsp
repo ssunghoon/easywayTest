@@ -5,21 +5,21 @@
 	<main>
 	<div class="d-flex flex-column flex-shrink-0 p-3 bg-light"
 		style="width: 280px;">
-		<a href="/"
+		<a href="/easyway/main/mainAction.do"
 			class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
 			<!-- 이미지자리 --> <span class="fs-4">오피스 이름</span>
 		</a>
 		<hr>
 		<ul class="nav nav-pills flex-column mb-auto">
-			<li><a href="#" class="nav-link active"> <!-- 이미지자리 --> 공지사항
+			<li><a href="/easyway/notice/noticeListAction.do" class="nav-link active"> <!-- 이미지자리 --> 공지사항
 			</a></li>
-			<li><a href="#" class="nav-link link-dark"> <!-- 이미지자리 -->
+			<li><a href="/easyway/attendance/attendanceTodayAction.do" class="nav-link link-dark"> <!-- 이미지자리 -->
 					근태관리
 			</a></li>
-			<li><a href="#" class="nav-link link-dark"> <!-- 이미지자리 -->
+			<li><a href="/easyway/sign/signInsertListAction.do" class="nav-link link-dark"> <!-- 이미지자리 -->
 					전자결재
 			</a></li>
-			<li><a href="#" class="nav-link link-dark"> <!-- 이미지자리 -->
+			<li><a href="/easyway/project/projectListAction.do" class="nav-link link-dark"> <!-- 이미지자리 -->
 					프로젝트
 			</a></li>
 			<li><a href="../schedules/calendar.jsp" class="nav-link link-dark"> <!-- 이미지자리 -->

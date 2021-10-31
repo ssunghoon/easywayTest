@@ -11,59 +11,35 @@ import javax.servlet.http.HttpServletResponse;
 
 import easyway.action.Action;
 import easyway.action.ActionForward;
+import easyway.action.main.MainAction;
 
-import easyway.action.schedule.ScheduleInsertAction;
-import easyway.action.schedule.ScheduleInsertFormAction;
-
-@WebServlet("/schedule/*")
-public class ScheduleController extends HttpServlet {
+@WebServlet("/main/*")
+public class MainController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+       
+    public MainController() {
+        super();
+    }
 
-	public ScheduleController() {
-		super();
-	}
-
-	public void doProcess(HttpServletRequest request, HttpServletResponse response)
+    public void doProcess(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String requestURI = request.getRequestURI();
 		String contextPath = request.getContextPath();
-		String command = requestURI.substring(contextPath.length() + 10);//url자르기
-		System.out.println(command);//실행확인
+		String command = requestURI.substring(contextPath.length() + 6);
+		System.out.println(command);
 
 		Action action = null;
 		ActionForward forward = null;
-		//스케쥴추가
-		if (command.equals("scheduleInsertForm.do")) {
-			action = new ScheduleInsertFormAction();
-			try {
-				forward = action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}else if (command.equals("scheduleInsertAction.do")) {
-			action = new ScheduleInsertAction();
-			try {
-				forward = action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}else if (command.equals("scheduleListAction.do")) {
-//			action = new ScheduleListAction();// 요청에대한 액션
-			try {
-				forward = action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
 
+		if (command.equals("mainAction.do")) {
+			action = new MainAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
-		
-		
-		
-		
-		
-		
-		
-		
+
 		if (forward != null) {
 			if (forward.isRedirect()) {
 				response.sendRedirect(forward.getPath());
