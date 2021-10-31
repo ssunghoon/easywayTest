@@ -37,10 +37,11 @@
 					<div class="card-body">
 						<h4 class="card-title">${officeCard.office_name}</h4>
 						<p class="card-text">${officeCard.office_name}입니다.</p>
-						<a href="#" class="btn btn-primary">입장하기</a>
+						<a href="/easyway/main/mainAction.do" class="btn btn-primary">입장하기</a>
 					</div>
 				</div>
 			</c:forEach>
+			
 		</div>
 		<button type="button" class="btn btn-primary" data-bs-toggle="modal"
 			data-bs-target="#officeCreateModal">오피스 생성

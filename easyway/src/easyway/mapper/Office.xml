@@ -7,7 +7,6 @@
 <mapper namespace="easyway.mapper.OfficeMapper">
 	<cache />
 
-	<!-- 이사& 수정하면서 : 아직 안쓰는 부분은 주석처리해가며 수정해야 에러 안 남 -->
 	<insert id="insertOffice" parameterType="Office">
 		insert into office(
 		office_id, office_name, office_code
@@ -15,25 +14,19 @@
 		values(
 		office_seq.nextval, #{office_name}, #{office_code}
 		)
-		insert into office_create(
-		office_id, office_name, office_code
-		)
-		values(
-		office_seq.nextval, #{office_name}, #{office_code}
-		)
-		insert into office(
-		office_id, office_name, office_code
-		)
-		values(
-		office_seq.nextval, #{office_name}, #{office_code}
-		)
+		<selectKey keyProperty="office_id" resultType="int" order="AFTER">
+			select office_seq.CURRVAL FROM DUAL
+		</selectKey>
 	</insert>
+	
+	<insert id="insertOfficeCreate" parameterType="OfficeCreate">
+		insert into office_create(oc_id, member_id, office_id)
+		values( oc_seq.nextval, #{member_id}, #{office_id} )
+	</insert>
+
 	<select id="listOffice" parameterType="int" resultType="Office">
-		select
-		o.office_id,o.office_name, o.office_code
-		from office o join office_create c
-		on o.office_id = c.office_id
-		where c.member_id = #{member_id}
+		select o.office_id,o.office_name, o.office_code from office o 
+		join office_create c on o.office_id = c.office_id where c.member_id = #{member_id}
 	</select>
 
 	<select id="detailOffice" parameterType="int"
