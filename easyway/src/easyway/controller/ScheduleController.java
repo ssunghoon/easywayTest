@@ -34,8 +34,17 @@ public class ScheduleController extends HttpServlet {
 		Action action = null;
 		ActionForward forward = null;
 		//스케쥴추가
+		
 		if (command.equals("scheduleListAction.do")) {
 			action = new ScheduleListAction();// 요청에대한 액션
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
+		}else if (command.equals("scheduleInsertAction.do")) {
+			action = new ScheduleInsertAction();// 요청에대한 액션
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
