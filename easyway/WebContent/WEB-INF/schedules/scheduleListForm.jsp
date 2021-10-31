@@ -277,7 +277,7 @@
 							<label>제목:</label> <input type="text" class="form-control" name="schedule_title">
 							<label>시작시간</label> <input type="date" class="form-control" name="schedule_start">
 							<label>종료시간</label> <input type="date" class="form-control" name="schedule_end">
-							<label>내용시간</label> <input type="text" class="form-control" name="schedule_content">
+							<label>내용</label> <input type="text" class="form-control" name="schedule_content">
 							<label>중요도 </label>
 							<input type="radio" name="schedule_importance" id="first" value="상">&nbsp;<label for="first">상</label>
 				 			<input type="radio" name="schedule_importance" id="second" value="중">&nbsp;<label for="second">중</label>
