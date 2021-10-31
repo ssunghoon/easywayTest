@@ -1,6 +1,7 @@
 package easyway.model.schedule;
 
 import java.io.InputStream;
+import java.util.List;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -49,8 +50,24 @@ public class ScheduleDao {
 				sqlSession. close();
 			}
 		}
-		
 		return re;
 	}
 	
+	public List<Schedule> scheduleList() {
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		List<Schedule> list = null;
+		
+		try {
+			list = sqlSession.getMapper(ScheduleMapper.class).scheduleList();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(sqlSession != null) {
+				sqlSession. close();
+			}
+		}
+		return list;
+		
+	}
 }

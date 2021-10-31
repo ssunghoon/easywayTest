@@ -16,6 +16,7 @@
 		<typeAlias type="easyway.model.sign.VacationSign" alias="VacationSign"/>
 		<typeAlias type="easyway.model.schedule.Schedule" alias="Schedule"/><!--schedule-->
 		<typeAlias type="easyway.model.notice.Notice" alias="Notice"/>
+		<typeAlias type="easyway.model.schedule.Schedule" alias="Schedule"/>
 	</typeAliases>
 	
 	<environments default="development">
