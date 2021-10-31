@@ -50,7 +50,6 @@ public class ScheduleController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-
 		}
 		
 		
