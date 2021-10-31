@@ -7,6 +7,10 @@
  	<typeAliases>
 		<typeAlias type="easyway.model.notice.Notice" alias="Notice"/>
 			<typeAlias type="easyway.model.notice.Search" alias="Search"/>
+			<typeAlias type="easyway.model.notice.Employee" alias="Employee"/>
+			<typeAlias type="easyway.model.notice.DepartMent" alias="DepartMent"/>
+			
+	
 	</typeAliases> 
 	
 	<environments default="development">

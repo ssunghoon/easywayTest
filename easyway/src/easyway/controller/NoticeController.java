@@ -32,6 +32,8 @@ public class NoticeController extends HttpServlet {
 		NoticeAction action = null;
 		NoticeActionForward forward = null;
 		
+		
+		
 		if (command.equals("noticeInsertForm.do")) {
 			action = new NoticeInsertFormAciton();
 			try {

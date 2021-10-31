@@ -7,11 +7,11 @@
 <mapper namespace="easyway.mapper.NoticeMapper">
 	<cache />
 
-	<insert parameterType="Notice" id="noticeInsert">
+	<insert  id="noticeInsert" parameterType="Notice">
 	insert into
-		OF_BOARD(ob_id, obm_id,
-		employee_id, ob_title, ob_type, ob_content, ob_file_path, ob_date, ob_view
-		)values(ob_seq.nextval, #{obm_id}, #{employee_id}, #{ob_title},	#{ob_type}, #{ob_content}, #{ob_file_path}, sysdate, 0)
+		OF_BOARD(ob_id,
+		employee_id, department_id, ob_title, ob_content, ob_file_path, ob_date, ob_view
+		)values(ob_seq.nextval, #{employee_id}, #{department_id}, #{ob_title},	#{ob_content}, #{ob_file_path}, sysdate, 0)
     
 	</insert>
 
@@ -19,4 +19,8 @@
 		select * from OF_BOARD
 	</select>
 
+<select id="noticeJoin1" resultType="Employee">
+select * from of_board join employee on of_board.employee_id = employee.employee_id
+</select>
+	
 </mapper>
